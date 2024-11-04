@@ -1,0 +1,964 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{36A0D664-D0F0-460D-9FC5-B5C2BCFB6CB1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OutModern</RootNamespace>
+    <AssemblyName>OutModern</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>
+    </IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\Admin\AdminLogin\AdminForgetPassword.aspx.cs">
+      <DependentUpon>AdminForgetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Admin\AdminLogin\AdminForgetPassword.aspx.designer.cs">
+      <DependentUpon>AdminForgetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Admin\AdminLogin\AdminLogin.aspx.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Admin\AdminLogin\AdminLogin.aspx.designer.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Admin\AdminLogin\AdminResetPassword.aspx.cs">
+      <DependentUpon>AdminResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Admin\AdminLogin\AdminResetPassword.aspx.designer.cs">
+      <DependentUpon>AdminResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Admin\CustomerDetails\CustomerDetails.aspx.cs">
+      <DependentUpon>CustomerDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Admin\CustomerDetails\CustomerDetails.aspx.designer.cs">
+      <DependentUpon>CustomerDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Admin\CustomerEdit\CustomerEdit.aspx.cs">
+      <DependentUpon>CustomerEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Admin\CustomerEdit\CustomerEdit.aspx.designer.cs">
+      <DependentUpon>CustomerEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Admin\OrderDetails\OrderDetails.aspx.cs">
+      <DependentUpon>OrderDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Admin\OrderDetails\OrderDetails.aspx.designer.cs">
+      <DependentUpon>OrderDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Admin\ProductAdd\ProductAdd.aspx.cs">
+      <DependentUpon>ProductAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Admin\ProductAdd\ProductAdd.aspx.designer.cs">
+      <DependentUpon>ProductAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Admin\ProductDetails\ProductDetails.aspx.cs">
+      <DependentUpon>ProductDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Admin\ProductDetails\ProductDetails.aspx.designer.cs">
+      <DependentUpon>ProductDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Admin\ProductEdit\ProductEdit.aspx.cs">
+      <DependentUpon>ProductEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Admin\ProductEdit\ProductEdit.aspx.designer.cs">
+      <DependentUpon>ProductEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Admin\ProductReviewReply\ProductReviewReply.aspx.cs">
+      <DependentUpon>ProductReviewReply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Admin\ProductReviewReply\ProductReviewReply.aspx.designer.cs">
+      <DependentUpon>ProductReviewReply.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Admin\Util\ValidationUtils.cs" />
+    <Compile Include="src\Client\Cart\Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Client\Cart\Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Client\Comment\Comment.aspx.cs">
+      <DependentUpon>Comment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Client\Comment\Comment.aspx.designer.cs">
+      <DependentUpon>Comment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Client\Login\FirstPage.aspx.cs">
+      <DependentUpon>FirstPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Client\Login\FirstPage.aspx.designer.cs">
+      <DependentUpon>FirstPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Client\Login\ForgetPassword.aspx.cs">
+      <DependentUpon>ForgetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Client\Login\ForgetPassword.aspx.designer.cs">
+      <DependentUpon>ForgetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Client\Login\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Client\Login\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Client\Login\Policy.aspx.cs">
+      <DependentUpon>Policy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Client\Login\Policy.aspx.designer.cs">
+      <DependentUpon>Policy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Client\Login\ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Client\Login\ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Client\Login\SignUp.aspx.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Client\Login\SignUp.aspx.designer.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Client\Payment\Payment.aspx.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Client\Payment\Payment.aspx.designer.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Client\Payment\Success.aspx.cs">
+      <DependentUpon>Success.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Client\Payment\Success.aspx.designer.cs">
+      <DependentUpon>Success.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Client\ProductDetails\ProductDetails.aspx.cs">
+      <DependentUpon>ProductDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Client\ProductDetails\ProductDetails.aspx.designer.cs">
+      <DependentUpon>ProductDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Client\Products\Products.aspx.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Client\Products\Products.aspx.designer.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Client\Shipping\Shipping.aspx.cs">
+      <DependentUpon>Shipping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Client\Shipping\Shipping.aspx.designer.cs">
+      <DependentUpon>Shipping.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Client\UserProfile\AddAddress.aspx.cs">
+      <DependentUpon>AddAddress.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Client\UserProfile\AddAddress.aspx.designer.cs">
+      <DependentUpon>AddAddress.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Client\UserProfile\Cancelled.aspx.cs">
+      <DependentUpon>Cancelled.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Client\UserProfile\Cancelled.aspx.designer.cs">
+      <DependentUpon>Cancelled.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Client\UserProfile\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Client\UserProfile\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Client\UserProfile\Completed.aspx.cs">
+      <DependentUpon>Completed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Client\UserProfile\Completed.aspx.designer.cs">
+      <DependentUpon>Completed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Client\UserProfile\CompletedDetails.aspx.cs">
+      <DependentUpon>CompletedDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Client\UserProfile\CompletedDetails.aspx.designer.cs">
+      <DependentUpon>CompletedDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Client\UserProfile\CompletedDetails2.aspx.cs">
+      <DependentUpon>CompletedDetails2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Client\UserProfile\CompletedDetails2.aspx.designer.cs">
+      <DependentUpon>CompletedDetails2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Client\UserProfile\DeleteAddress.aspx.cs">
+      <DependentUpon>DeleteAddress.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Client\UserProfile\DeleteAddress.aspx.designer.cs">
+      <DependentUpon>DeleteAddress.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Client\UserProfile\EditUserProfile.aspx.cs">
+      <DependentUpon>EditUserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Client\UserProfile\EditUserProfile.aspx.designer.cs">
+      <DependentUpon>EditUserProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Client\UserProfile\ToReceive.aspx.cs">
+      <DependentUpon>ToReceive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Client\UserProfile\ToReceive.aspx.designer.cs">
+      <DependentUpon>ToReceive.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Client\UserProfile\ToShip.aspx.cs">
+      <DependentUpon>ToShip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Client\UserProfile\ToShip.aspx.designer.cs">
+      <DependentUpon>ToShip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Client\UserProfile\UserProfile.aspx.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Client\UserProfile\UserProfile.aspx.designer.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Client\UserProfile\UserReivew.aspx.cs">
+      <DependentUpon>UserReivew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Client\UserProfile\UserReivew.aspx.designer.cs">
+      <DependentUpon>UserReivew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\ErrorPages\403.aspx.cs">
+      <DependentUpon>403.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\ErrorPages\403.aspx.designer.cs">
+      <DependentUpon>403.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\ErrorPages\404.aspx.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\ErrorPages\404.aspx.designer.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\ErrorPages\500.aspx.cs">
+      <DependentUpon>500.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\ErrorPages\500.aspx.designer.cs">
+      <DependentUpon>500.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\ErrorPages\ErrorSQLInjection.aspx.cs">
+      <DependentUpon>ErrorSQLInjection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\ErrorPages\ErrorSQLInjection.aspx.designer.cs">
+      <DependentUpon>ErrorSQLInjection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Util\StringUtil.cs" />
+    <Content Include="App_Data\OutModern.mdf" />
+    <Content Include="App_Data\OutModern_log.ldf" />
+    <Content Include="favicon\android-chrome-192x192.png" />
+    <Content Include="favicon\android-chrome-512x512.png" />
+    <Content Include="favicon\apple-touch-icon.png" />
+    <Content Include="favicon\favicon-16x16.png" />
+    <Content Include="favicon\favicon-32x32.png" />
+    <Content Include="favicon\favicon.ico" />
+    <Content Include="images\about_us_img\aboutUs%281%29.jpg" />
+    <Content Include="images\about_us_img\happy.jpg" />
+    <Content Include="images\about_us_img\img%28a%29.jpg" />
+    <Content Include="images\about_us_img\img%28b%29.jpg" />
+    <Content Include="images\about_us_img\img%28c%29.jpg" />
+    <Content Include="images\about_us_img\img%28d%29.jpg" />
+    <Content Include="images\about_us_img\img%28e%29.jpg" />
+    <Content Include="images\about_us_img\our_personality.jpg" />
+    <Content Include="images\about_us_img\our_positioning.jpg" />
+    <Content Include="images\about_us_img\our_purpose.jpg" />
+    <Content Include="images\about_us_img\Simple.jpg" />
+    <Content Include="images\about_us_img\Together.jpg" />
+    <Content Include="images\cartEmpty.png" />
+    <Content Include="images\charles-etoroma-95UF6LXe-Lo-unsplash.jpg" />
+    <Content Include="images\contact_us_pic.jpg" />
+    <Content Include="images\customerService.jpeg" />
+    <Content Include="images\empty-star.svg" />
+    <Content Include="images\emptyCart.png" />
+    <Content Include="images\formbackground.jpg" />
+    <Content Include="images\grab_pay_logo.png" />
+    <Content Include="images\half-star.svg" />
+    <Content Include="images\home-img\home1.jpeg" />
+    <Content Include="images\home-img\home2.jpg" />
+    <Content Include="images\loading.gif" />
+    <Content Include="images\login-img\login-background.jpg" />
+    <Content Include="images\login-img\login-background11.jpg" />
+    <Content Include="images\login-img\login-background13.jpg" />
+    <Content Include="images\login-img\login-background14.jpg" />
+    <Content Include="images\login-img\login-background15.jpg" />
+    <Content Include="images\login-img\login-background3.jpg" />
+    <Content Include="images\login-img\login-background6.jpg" />
+    <Content Include="images\login-img\login-background7.jpg" />
+    <Content Include="images\login-img\login-background8.jpg" />
+    <Content Include="images\logo-admin.png" />
+    <Content Include="images\logo-admin2.png" />
+    <Content Include="images\logo2.png" />
+    <Content Include="images\manage_pic1.jpg" />
+    <Content Include="images\marble.jpg" />
+    <Content Include="images\mastercard_logo.png" />
+    <Content Include="images\maybank_logo.png" />
+    <Content Include="images\paypal.png" />
+    <Content Include="images\person1.jpg" />
+    <Content Include="images\person2.jpg" />
+    <Content Include="images\person3.jpg" />
+    <Content Include="images\person4.jpg" />
+    <Content Include="images\person5.jpg" />
+    <Content Include="images\pg7_img.png" />
+    <Content Include="images\pg7_img_cropped.jpg" />
+    <Content Include="images\product-img\accessories\all-over-print-premium-face-mask-white-front-610f63226db7f.png" />
+    <Content Include="images\product-img\accessories\all-over-print-premium-face-mask-white-front-610f63226dc50.png" />
+    <Content Include="images\product-img\accessories\all-over-print-premium-face-mask-white-left-610f63226db23.png" />
+    <Content Include="images\product-img\accessories\all-over-print-tote-black-15x15-mockup-610f574e11d24.png" />
+    <Content Include="images\product-img\accessories\all-over-print-tote-black-15x15-mockup-610f574e11f58.png" />
+    <Content Include="images\product-img\accessories\all-over-print-tote-black-15x15-mockup-610f582cde695.png" />
+    <Content Include="images\product-img\accessories\all-over-print-tote-black-15x15-mockup-610f582cde72f.png" />
+    <Content Include="images\product-img\accessories\bucket-hat-i-big-accessories-b3-black-front-60e71fa93e72b.png" />
+    <Content Include="images\product-img\accessories\bucket-hat-i-big-accessories-b3-black-front-60e71fa93e910.png" />
+    <Content Include="images\product-img\accessories\bucket-hat-i-big-accessories-b3-black-front-60e71fa93e9cf.png" />
+    <Content Include="images\product-img\accessories\bucket-hat-i-big-accessories-b3-black-front-60f6dba948d54.png" />
+    <Content Include="images\product-img\accessories\bucket-hat-i-big-accessories-b3-black-front-60f6dba948e78.png" />
+    <Content Include="images\product-img\accessories\bucket-hat-i-big-accessories-b3-black-product-details-2-60e71fc93fc49.png" />
+    <Content Include="images\product-img\accessories\bucket-hat-i-big-accessories-bx003-black-front-60e71fa93e72b.png" />
+    <Content Include="images\product-img\accessories\bucket-hat-i-big-accessories-bx003-black-front-60e71fa93e910.png" />
+    <Content Include="images\product-img\accessories\bucket-hat-i-big-accessories-bx003-black-front-60e71fa93e9cf.png" />
+    <Content Include="images\product-img\accessories\bucket-hat-i-big-accessories-bx003-black-front-60f6dba948d54.png" />
+    <Content Include="images\product-img\accessories\bucket-hat-i-big-accessories-bx003-black-front-60f6dba948e78.png" />
+    <Content Include="images\product-img\accessories\bucket-hat-i-big-accessories-bx003-black-product-details-2-60e71fc93fc49.png" />
+    <Content Include="images\product-img\accessories\embroidered-simple-backpack-i-bagbase-bg126-anthracite-back-610bfcc335420.png" />
+    <Content Include="images\product-img\accessories\embroidered-simple-backpack-i-bagbase-bg126-anthracite-front-610bfcc3353b4.png" />
+    <Content Include="images\product-img\accessories\embroidered-simple-backpack-i-bagbase-bg126-anthracite-left-front-610bfcc335478.png" />
+    <Content Include="images\product-img\accessories\embroidered-simple-backpack-i-bagbase-bg126-anthracite-right-front-610bfcc3354d9.png" />
+    <Content Include="images\product-img\accessories\embroidered-simple-backpack-i-bagbase-bg126-grey-marl-back-610bfcc33553b.png" />
+    <Content Include="images\product-img\accessories\embroidered-simple-backpack-i-bagbase-bg126-grey-marl-front-610bfcc3352d5.png" />
+    <Content Include="images\product-img\accessories\embroidered-simple-backpack-i-bagbase-bg126-grey-marl-left-front-610bfcc33558e.png" />
+    <Content Include="images\product-img\accessories\embroidered-simple-backpack-i-bagbase-bg126-grey-marl-right-front-610bfcc3355ed.png" />
+    <Content Include="images\product-img\accessories\engraved-silver-bar-chain-necklace-18k-rose-gold-coating-flat-610f5aba51f38.png" />
+    <Content Include="images\product-img\accessories\engraved-silver-bar-chain-necklace-18k-rose-gold-coating-women-610f5aba52014.png" />
+    <Content Include="images\product-img\accessories\engraved-silver-bar-chain-necklace-24k-gold-coating-flat-610f5b6bb66bf.png" />
+    <Content Include="images\product-img\accessories\engraved-silver-bar-chain-necklace-24k-gold-coating-women-610f5b6bb6900.png" />
+    <Content Include="images\product-img\accessories\engraved-silver-hexagon-chain-necklace-18k-rose-gold-coating-flat-610f5f8ab2483.png" />
+    <Content Include="images\product-img\accessories\engraved-silver-hexagon-chain-necklace-18k-rose-gold-coating-womens-2-610f5f8ab2533.png" />
+    <Content Include="images\product-img\accessories\engraved-silver-hexagon-chain-necklace-24k-gold-coating-flat-610f5f2835bb1.png" />
+    <Content Include="images\product-img\accessories\engraved-silver-hexagon-chain-necklace-24k-gold-coating-womens-2-610f5f2835c70.png" />
+    <Content Include="images\product-img\accessories\file_embroidery_apparel_front.png" />
+    <Content Include="images\product-img\biker-shorts-size-guide.png" />
+    <Content Include="images\product-img\hoodie-size-guide.png" />
+    <Content Include="images\product-img\hoodies\beige-Hoodie\unisex-sueded-fleece-hoodie-heather-oat-front-61167de6441b1.png" />
+    <Content Include="images\product-img\hoodies\beige-Hoodie\unisex-sueded-fleece-hoodie-heather-oat-front-61167de644282.png" />
+    <Content Include="images\product-img\hoodies\beige-Hoodie\unisex-sueded-fleece-hoodie-heather-oat-zoomed-in-61167de6440a2.png" />
+    <Content Include="images\product-img\hoodies\beige-Hoodie\unisex-sueded-fleece-hoodie-heather-oat-zoomed-in-61167de64439a.png" />
+    <Content Include="images\product-img\hoodies\black-Hoodie\all-over-print-unisex-hoodie-white-front-611679bab7dfd.png" />
+    <Content Include="images\product-img\hoodies\black-Hoodie\all-over-print-unisex-hoodie-white-front-611679bab7f9b.png" />
+    <Content Include="images\product-img\hoodies\black-Hoodie\all-over-print-unisex-hoodie-white-left-611679bab841c.png" />
+    <Content Include="images\product-img\hoodies\black-Hoodie\all-over-print-unisex-hoodie-white-left-611679bab84f3.png" />
+    <Content Include="images\product-img\hoodies\black-Hoodie\all-over-print-unisex-hoodie-white-right-611679bab8269.png" />
+    <Content Include="images\product-img\hoodies\black-Hoodie\all-over-print-unisex-hoodie-white-right-611679bab833d.png" />
+    <Content Include="images\product-img\hoodies\black-Hoodie\unisex-champion-tie-dye-hoodie-black-front-2-6116819deddd3.png" />
+    <Content Include="images\product-img\hoodies\black-Hoodie\unisex-champion-tie-dye-hoodie-black-front-2-6116819dedefa.png" />
+    <Content Include="images\product-img\hoodies\black-Hoodie\unisex-champion-tie-dye-hoodie-black-zoomed-in-3-6116819dede77.png" />
+    <Content Include="images\product-img\hoodies\black-Hoodie\unisex-champion-tie-dye-hoodie-black-zoomed-in-3-6116819dee008.png" />
+    <Content Include="images\product-img\hoodies\black-Hoodie\unisex-champion-tie-dye-hoodie-black-zoomed-in-6116819dedc5e.png" />
+    <Content Include="images\product-img\hoodies\black-Hoodie\unisex-champion-tie-dye-hoodie-black-zoomed-in-6116819dedf84.png" />
+    <Content Include="images\product-img\hoodies\black-Hoodie\unisex-heavy-blend-hoodie-black-front-2-60e815eedc1e7.png" />
+    <Content Include="images\product-img\hoodies\black-Hoodie\unisex-heavy-blend-hoodie-black-front-60e815eedaabc.png" />
+    <Content Include="images\product-img\hoodies\black-Hoodie\unisex-heavy-blend-hoodie-black-front-60e815eedacd3.png" />
+    <Content Include="images\product-img\hoodies\black-Hoodie\unisex-heavy-blend-hoodie-black-front-60e815eedb03e.png" />
+    <Content Include="images\product-img\hoodies\black-Hoodie\unisex-heavy-blend-hoodie-black-front-60e815eedb558.png" />
+    <Content Include="images\product-img\hoodies\black-Hoodie\unisex-heavy-blend-hoodie-black-front-60e815eedb8ba.png" />
+    <Content Include="images\product-img\hoodies\black-Hoodie\unisex-heavy-blend-hoodie-black-front-60e815eedba87.png" />
+    <Content Include="images\product-img\hoodies\black-Hoodie\unisex-heavy-blend-hoodie-black-front-60e815eedbc5a.png" />
+    <Content Include="images\product-img\hoodies\black-Hoodie\unisex-heavy-blend-hoodie-black-front-60e815eedbe26.png" />
+    <Content Include="images\product-img\hoodies\black-Hoodie\unisex-heavy-blend-hoodie-black-front-60e815eedbffd.png" />
+    <Content Include="images\product-img\hoodies\black-Hoodie\unisex-heavy-blend-hoodie-black-front-60e815eedc3f0.png" />
+    <Content Include="images\product-img\hoodies\black-Hoodie\unisex-lightweight-zip-hoodie-solid-black-triblend-front-611680cef32df.png" />
+    <Content Include="images\product-img\hoodies\black-Hoodie\unisex-lightweight-zip-hoodie-solid-black-triblend-front-611680cef3410.png" />
+    <Content Include="images\product-img\hoodies\black-Hoodie\unisex-premium-hoodie-black-front-61167f87b64ad.png" />
+    <Content Include="images\product-img\hoodies\black-Hoodie\unisex-premium-hoodie-black-front-61167f87b65ea.png" />
+    <Content Include="images\product-img\hoodies\black-Hoodie\unisex-sueded-fleece-hoodie-black-heather-front-61167da80db23.png" />
+    <Content Include="images\product-img\hoodies\black-Hoodie\unisex-sueded-fleece-hoodie-black-heather-front-61167da80dd0a.png" />
+    <Content Include="images\product-img\hoodies\black-Hoodie\unisex-sueded-fleece-hoodie-black-heather-zoomed-in-61167da80dc61.png" />
+    <Content Include="images\product-img\hoodies\black-Hoodie\unisex-sueded-fleece-hoodie-black-heather-zoomed-in-61167da80dd89.png" />
+    <Content Include="images\product-img\hoodies\lightGray-Hoodie\unisex-lightweight-zip-hoodie-grey-triblend-front-611680ccb2299.png" />
+    <Content Include="images\product-img\hoodies\lightGray-Hoodie\unisex-lightweight-zip-hoodie-grey-triblend-front-611680ccb23ba.png" />
+    <Content Include="images\product-img\hoodies\lightGray-Hoodie\unisex-premium-hoodie-carbon-grey-front-61167fab1b5c3.png" />
+    <Content Include="images\product-img\hoodies\lightGray-Hoodie\unisex-premium-hoodie-carbon-grey-front-61167fab1b8ad.png" />
+    <Content Include="images\product-img\hoodies\lightGray-Hoodie\unisex-sueded-fleece-hoodie-athletic-heather-front-61167de643d1e.png" />
+    <Content Include="images\product-img\hoodies\lightGray-Hoodie\unisex-sueded-fleece-hoodie-athletic-heather-front-61167de643f36.png" />
+    <Content Include="images\product-img\hoodies\lightGray-Hoodie\unisex-sueded-fleece-hoodie-athletic-heather-zoomed-in-61167de643e71.png" />
+    <Content Include="images\product-img\hoodies\lightGray-Hoodie\unisex-sueded-fleece-hoodie-athletic-heather-zoomed-in-61167de643fde.png" />
+    <Content Include="images\product-img\hoodies\white-Hoodie\all-over-print-unisex-hoodie-white-front-61167c6b9a48f.png" />
+    <Content Include="images\product-img\hoodies\white-Hoodie\all-over-print-unisex-hoodie-white-front-61167c6b9a64c.png" />
+    <Content Include="images\product-img\hoodies\white-Hoodie\all-over-print-unisex-hoodie-white-left-61167c6b9a97e.png" />
+    <Content Include="images\product-img\hoodies\white-Hoodie\all-over-print-unisex-hoodie-white-left-61167c6b9aa8a.png" />
+    <Content Include="images\product-img\hoodies\white-Hoodie\all-over-print-unisex-hoodie-white-right-61167c6b9a76f.png" />
+    <Content Include="images\product-img\hoodies\white-Hoodie\all-over-print-unisex-hoodie-white-right-61167c6b9a87c.png" />
+    <Content Include="images\product-img\hoodies\white-Hoodie\unisex-essential-eco-hoodie-white-front-2-60e7150a8377c.png" />
+    <Content Include="images\product-img\hoodies\white-Hoodie\unisex-essential-eco-hoodie-white-front-60e7150a8364f.png" />
+    <Content Include="images\product-img\hoodies\white-Hoodie\unisex-essential-eco-hoodie-white-front-60e7150a8381a.png" />
+    <Content Include="images\product-img\hoodies\white-Hoodie\unisex-premium-hoodie-white-front-61167fab1b96e.png" />
+    <Content Include="images\product-img\hoodies\white-Hoodie\unisex-premium-hoodie-white-front-61167fab1babf.png" />
+    <Content Include="images\product-img\short-size-guide.png" />
+    <Content Include="images\product-img\shorts\black-Short\mens-fleece-shorts-black-front-611920673f190.png" />
+    <Content Include="images\product-img\shorts\black-Short\mens-fleece-shorts-black-front-611920673f39b.png" />
+    <Content Include="images\product-img\shorts\lightGray-Short\mens-fleece-shorts-heather-grey-front-611912e5e26c6.png" />
+    <Content Include="images\product-img\shorts\lightGray-Short\mens-fleece-shorts-heather-grey-left-front-611912e5e2543.png" />
+    <Content Include="images\product-img\shorts\navy-Short\all-over-print-mens-athletic-long-shorts-white-front-611916641c675.png" />
+    <Content Include="images\product-img\shorts\navy-Short\all-over-print-mens-athletic-long-shorts-white-left-611916641c2ff.png" />
+    <Content Include="images\product-img\shorts\white-Short\all-over-print-biker-shorts-white-front-61191174a4d1a.png" />
+    <Content Include="images\product-img\shorts\white-Short\all-over-print-biker-shorts-white-left-front-61191174a5001.png" />
+    <Content Include="images\product-img\shorts\white-Short\all-over-print-mens-athletic-long-shorts-white-back-611914ca4352e.png" />
+    <Content Include="images\product-img\shorts\white-Short\all-over-print-mens-athletic-long-shorts-white-back-611914ca435c3.png" />
+    <Content Include="images\product-img\shorts\white-Short\all-over-print-mens-athletic-long-shorts-white-front-611910b9e5629.png" />
+    <Content Include="images\product-img\shorts\white-Short\all-over-print-mens-athletic-long-shorts-white-front-611911368fc76.png" />
+    <Content Include="images\product-img\shorts\white-Short\all-over-print-mens-athletic-long-shorts-white-front-611914ca431fa.png" />
+    <Content Include="images\product-img\shorts\white-Short\all-over-print-mens-athletic-long-shorts-white-front-611914ca43482.png" />
+    <Content Include="images\product-img\shorts\white-Short\all-over-print-mens-athletic-long-shorts-white-left-611910b9e56fc.png" />
+    <Content Include="images\product-img\shorts\white-Short\all-over-print-mens-athletic-long-shorts-white-left-611914ca433ea.png" />
+    <Content Include="images\product-img\shorts\white-Short\all-over-print-mens-athletic-long-shorts-white-right-611914ca43347.png" />
+    <Content Include="images\product-img\shorts\white-Short\all-over-print-yoga-shorts-white-front-6119138a5cb03.png" />
+    <Content Include="images\product-img\shorts\white-Short\all-over-print-yoga-shorts-white-left-6119138a5cbd9.png" />
+    <Content Include="images\product-img\shorts\white-Short\mens-fleece-shorts-white-front-611912e5e292e.png" />
+    <Content Include="images\product-img\shorts\white-Short\mens-fleece-shorts-white-left-front-611912e5e2796.png" />
+    <Content Include="images\product-img\sweater-size-guide.png" />
+    <Content Include="images\product-img\sweater\beige-Sweater\mens-long-sleeve-shirt-sand-front-60e812b79d219.png" />
+    <Content Include="images\product-img\sweater\beige-Sweater\mens-long-sleeve-shirt-sand-front-60e812b79d36b.png" />
+    <Content Include="images\product-img\sweater\beige-Sweater\mens-long-sleeve-shirt-sand-front-60e812b79d4af.png" />
+    <Content Include="images\product-img\sweater\beige-Sweater\mens-long-sleeve-shirt-sand-front-60e812b79d603.png" />
+    <Content Include="images\product-img\sweater\beige-Sweater\mens-long-sleeve-shirt-sand-front-60e812b79d893.png" />
+    <Content Include="images\product-img\sweater\beige-Sweater\mens-long-sleeve-shirt-sand-left-front-60e812b79d746.png" />
+    <Content Include="images\product-img\sweater\black-Sweater\mens-long-sleeve-shirt-black-front-60e80ed32c055.png" />
+    <Content Include="images\product-img\sweater\black-Sweater\mens-long-sleeve-shirt-black-front-60e80ed32c183.png" />
+    <Content Include="images\product-img\sweater\black-Sweater\mens-long-sleeve-shirt-black-front-60e80ed32c24d.png" />
+    <Content Include="images\product-img\sweater\black-Sweater\mens-long-sleeve-shirt-black-front-60e80ed32c317.png" />
+    <Content Include="images\product-img\sweater\black-Sweater\mens-long-sleeve-shirt-black-front-60e80ed32c4a4.png" />
+    <Content Include="images\product-img\sweater\black-Sweater\mens-long-sleeve-shirt-black-left-front-60e80ed32c3e0.png" />
+    <Content Include="images\product-img\sweater\black-Sweater\unisex-crew-neck-sweatshirt-black-front-2-60e80d4dcdba2.png" />
+    <Content Include="images\product-img\sweater\black-Sweater\unisex-crew-neck-sweatshirt-black-front-2-6117dcd64a3ff.png" />
+    <Content Include="images\product-img\sweater\black-Sweater\unisex-crew-neck-sweatshirt-black-front-60e80d4dcaecf.png" />
+    <Content Include="images\product-img\sweater\black-Sweater\unisex-crew-neck-sweatshirt-black-front-60e80d4dcb24b.png" />
+    <Content Include="images\product-img\sweater\black-Sweater\unisex-crew-neck-sweatshirt-black-front-60e80d4dcb3bd.png" />
+    <Content Include="images\product-img\sweater\black-Sweater\unisex-crew-neck-sweatshirt-black-front-60e80d4dcbe3b.png" />
+    <Content Include="images\product-img\sweater\black-Sweater\unisex-crew-neck-sweatshirt-black-front-60e80d4dccf74.png" />
+    <Content Include="images\product-img\sweater\black-Sweater\unisex-crew-neck-sweatshirt-black-front-60e80d4dcd31f.png" />
+    <Content Include="images\product-img\sweater\black-Sweater\unisex-crew-neck-sweatshirt-black-front-60e80d4dcd4c9.png" />
+    <Content Include="images\product-img\sweater\black-Sweater\unisex-crew-neck-sweatshirt-black-front-60e80d4dcd834.png" />
+    <Content Include="images\product-img\sweater\black-Sweater\unisex-crew-neck-sweatshirt-black-front-6117dcd64a03a.png" />
+    <Content Include="images\product-img\sweater\black-Sweater\unisex-crew-neck-sweatshirt-black-front-6117dcd64a289.png" />
+    <Content Include="images\product-img\sweater\black-Sweater\unisex-crew-neck-sweatshirt-black-zoomed-in-60e80d4dcbcab.png" />
+    <Content Include="images\product-img\sweater\black-Sweater\unisex-crew-neck-sweatshirt-black-zoomed-in-60e80d4dcd177.png" />
+    <Content Include="images\product-img\sweater\black-Sweater\unisex-crew-neck-sweatshirt-black-zoomed-in-60e80d4dcd9f7.png" />
+    <Content Include="images\product-img\sweater\black-Sweater\unisex-fleece-sweatshirt-black-front-2-6117dbba90dea.png" />
+    <Content Include="images\product-img\sweater\black-Sweater\unisex-fleece-sweatshirt-black-front-2-6117dbba90f03.png" />
+    <Content Include="images\product-img\sweater\black-Sweater\unisex-fleece-sweatshirt-black-front-6117dbba90b5f.png" />
+    <Content Include="images\product-img\sweater\black-Sweater\unisex-fleece-sweatshirt-black-front-6117dbba90cc8.png" />
+    <Content Include="images\product-img\sweater\blue-Sweater\mens-long-sleeve-shirt-indigo-blue-front-60e80ed3304df.png" />
+    <Content Include="images\product-img\sweater\blue-Sweater\mens-long-sleeve-shirt-indigo-blue-front-60e80ed330967.png" />
+    <Content Include="images\product-img\sweater\blue-Sweater\mens-long-sleeve-shirt-indigo-blue-front-60e80ed330df0.png" />
+    <Content Include="images\product-img\sweater\blue-Sweater\mens-long-sleeve-shirt-indigo-blue-front-60e80ed331278.png" />
+    <Content Include="images\product-img\sweater\blue-Sweater\mens-long-sleeve-shirt-indigo-blue-front-60e80ed331c38.png" />
+    <Content Include="images\product-img\sweater\blue-Sweater\mens-long-sleeve-shirt-indigo-blue-left-front-60e80ed33176c.png" />
+    <Content Include="images\product-img\sweater\darkBlue-Sweater\mens-long-sleeve-shirt-royal-front-60e80ed32ddeb.png" />
+    <Content Include="images\product-img\sweater\darkBlue-Sweater\mens-long-sleeve-shirt-royal-front-60e80ed32e0da.png" />
+    <Content Include="images\product-img\sweater\darkBlue-Sweater\mens-long-sleeve-shirt-royal-front-60e80ed32e3b8.png" />
+    <Content Include="images\product-img\sweater\darkBlue-Sweater\mens-long-sleeve-shirt-royal-front-60e80ed32e698.png" />
+    <Content Include="images\product-img\sweater\darkBlue-Sweater\mens-long-sleeve-shirt-royal-front-60e80ed32ec92.png" />
+    <Content Include="images\product-img\sweater\darkBlue-Sweater\mens-long-sleeve-shirt-royal-left-front-60e80ed32e96f.png" />
+    <Content Include="images\product-img\sweater\lightBlue-Sweater\mens-long-sleeve-shirt-light-blue-front-60e80ed332092.png" />
+    <Content Include="images\product-img\sweater\lightBlue-Sweater\mens-long-sleeve-shirt-light-blue-front-60e80ed3325a3.png" />
+    <Content Include="images\product-img\sweater\lightBlue-Sweater\mens-long-sleeve-shirt-light-blue-front-60e80ed332ab0.png" />
+    <Content Include="images\product-img\sweater\lightBlue-Sweater\mens-long-sleeve-shirt-light-blue-front-60e80ed333007.png" />
+    <Content Include="images\product-img\sweater\lightBlue-Sweater\mens-long-sleeve-shirt-light-blue-front-60e80ed333a1a.png" />
+    <Content Include="images\product-img\sweater\lightBlue-Sweater\mens-long-sleeve-shirt-light-blue-left-front-60e80ed33351f.png" />
+    <Content Include="images\product-img\sweater\lightGray-Sweater\mens-long-sleeve-shirt-sport-grey-front-60e812b79ccaf.png" />
+    <Content Include="images\product-img\sweater\lightGray-Sweater\mens-long-sleeve-shirt-sport-grey-front-60e812b79cd9e.png" />
+    <Content Include="images\product-img\sweater\lightGray-Sweater\mens-long-sleeve-shirt-sport-grey-front-60e812b79ce7a.png" />
+    <Content Include="images\product-img\sweater\lightGray-Sweater\mens-long-sleeve-shirt-sport-grey-front-60e812b79cf5e.png" />
+    <Content Include="images\product-img\sweater\lightGray-Sweater\mens-long-sleeve-shirt-sport-grey-front-60e812b79d12a.png" />
+    <Content Include="images\product-img\sweater\lightGray-Sweater\mens-long-sleeve-shirt-sport-grey-left-front-60e812b79d044.png" />
+    <Content Include="images\product-img\sweater\militaryGreen-Sweater\mens-long-sleeve-shirt-military-green-front-60e80ed32ef92.png" />
+    <Content Include="images\product-img\sweater\militaryGreen-Sweater\mens-long-sleeve-shirt-military-green-front-60e80ed32f321.png" />
+    <Content Include="images\product-img\sweater\militaryGreen-Sweater\mens-long-sleeve-shirt-military-green-front-60e80ed32f68d.png" />
+    <Content Include="images\product-img\sweater\militaryGreen-Sweater\mens-long-sleeve-shirt-military-green-front-60e80ed32f9fe.png" />
+    <Content Include="images\product-img\sweater\militaryGreen-Sweater\mens-long-sleeve-shirt-military-green-front-60e80ed330137.png" />
+    <Content Include="images\product-img\sweater\militaryGreen-Sweater\mens-long-sleeve-shirt-military-green-left-front-60e80ed32fd8b.png" />
+    <Content Include="images\product-img\sweater\navy-Sweater\all-over-print-unisex-sweatshirt-white-back-6117db31d3a79.png" />
+    <Content Include="images\product-img\sweater\navy-Sweater\all-over-print-unisex-sweatshirt-white-back-6117db31d3b32.png" />
+    <Content Include="images\product-img\sweater\navy-Sweater\all-over-print-unisex-sweatshirt-white-front-6117db31d382e.png" />
+    <Content Include="images\product-img\sweater\navy-Sweater\all-over-print-unisex-sweatshirt-white-front-6117db31d399c.png" />
+    <Content Include="images\product-img\sweater\navy-Sweater\all-over-print-unisex-sweatshirt-white-left-front-6117db31d3c00.png" />
+    <Content Include="images\product-img\sweater\navy-Sweater\all-over-print-unisex-sweatshirt-white-left-front-6117db31d3cb6.png" />
+    <Content Include="images\product-img\sweater\navy-Sweater\mens-long-sleeve-shirt-navy-front-60e80ed32c586.png" />
+    <Content Include="images\product-img\sweater\navy-Sweater\mens-long-sleeve-shirt-navy-front-60e80ed32c73e.png" />
+    <Content Include="images\product-img\sweater\navy-Sweater\mens-long-sleeve-shirt-navy-front-60e80ed32c8e9.png" />
+    <Content Include="images\product-img\sweater\navy-Sweater\mens-long-sleeve-shirt-navy-front-60e80ed32caa6.png" />
+    <Content Include="images\product-img\sweater\navy-Sweater\mens-long-sleeve-shirt-navy-front-60e80ed32ce18.png" />
+    <Content Include="images\product-img\sweater\navy-Sweater\mens-long-sleeve-shirt-navy-left-front-60e80ed32cc5e.png" />
+    <Content Include="images\product-img\sweater\red-Sweater\mens-long-sleeve-shirt-red-front-60e812b79c9f9.png" />
+    <Content Include="images\product-img\sweater\red-Sweater\mens-long-sleeve-shirt-red-front-60e812b79ca7e.png" />
+    <Content Include="images\product-img\sweater\red-Sweater\mens-long-sleeve-shirt-red-front-60e812b79caef.png" />
+    <Content Include="images\product-img\sweater\red-Sweater\mens-long-sleeve-shirt-red-front-60e812b79cb60.png" />
+    <Content Include="images\product-img\sweater\red-Sweater\mens-long-sleeve-shirt-red-front-60e812b79cc39.png" />
+    <Content Include="images\product-img\sweater\red-Sweater\mens-long-sleeve-shirt-red-left-front-60e812b79cbc9.png" />
+    <Content Include="images\product-img\sweater\white-sweater\all-over-print-unisex-sweatshirt-white-back-6117db4cccad6.png" />
+    <Content Include="images\product-img\sweater\white-sweater\all-over-print-unisex-sweatshirt-white-back-6117db4ccce12.png" />
+    <Content Include="images\product-img\sweater\white-sweater\all-over-print-unisex-sweatshirt-white-right-front-6117db4cccf2d.png" />
+    <Content Include="images\product-img\sweater\white-sweater\all-over-print-unisex-sweatshirt-white-right-front-6117db4ccd002.png" />
+    <Content Include="images\product-img\sweater\white-sweater\mens-long-sleeve-shirt-white-front-60e812b79c7a6.png" />
+    <Content Include="images\product-img\sweater\white-sweater\mens-long-sleeve-shirt-white-front-60e812b79d9ea.png" />
+    <Content Include="images\product-img\sweater\white-sweater\mens-long-sleeve-shirt-white-front-60e812b79dd0f.png" />
+    <Content Include="images\product-img\sweater\white-sweater\mens-long-sleeve-shirt-white-front-60e812b79e02c.png" />
+    <Content Include="images\product-img\sweater\white-sweater\mens-long-sleeve-shirt-white-left-front-60e812b79de9e.png" />
+    <Content Include="images\product-img\sweater\white-sweater\unisex-crew-neck-sweatshirt-white-front-2-6117dcd64abc3.png" />
+    <Content Include="images\product-img\sweater\white-sweater\unisex-crew-neck-sweatshirt-white-front-60e80cba6ef27.png" />
+    <Content Include="images\product-img\sweater\white-sweater\unisex-crew-neck-sweatshirt-white-front-60e80cba6f73c.png" />
+    <Content Include="images\product-img\sweater\white-sweater\unisex-crew-neck-sweatshirt-white-front-60e80cba6f8ef.png" />
+    <Content Include="images\product-img\sweater\white-sweater\unisex-crew-neck-sweatshirt-white-front-60e80cba6f9d1.png" />
+    <Content Include="images\product-img\sweater\white-sweater\unisex-crew-neck-sweatshirt-white-front-60e80cba6fb89.png" />
+    <Content Include="images\product-img\sweater\white-sweater\unisex-crew-neck-sweatshirt-white-front-6117dcd64a513.png" />
+    <Content Include="images\product-img\sweater\white-sweater\unisex-crew-neck-sweatshirt-white-front-6117dcd64a8a9.png" />
+    <Content Include="images\product-img\sweater\white-sweater\unisex-crew-neck-sweatshirt-white-zoomed-in-60e80cba6f816.png" />
+    <Content Include="images\product-img\sweater\white-sweater\unisex-crew-neck-sweatshirt-white-zoomed-in-60e80cba6fc71.png" />
+    <Content Include="images\product-img\sweater\white-sweater\unisex-fleece-sweatshirt-white-front-2-6117dbba912b4.png" />
+    <Content Include="images\product-img\sweater\white-sweater\unisex-fleece-sweatshirt-white-front-2-6117dbba913f6.png" />
+    <Content Include="images\product-img\sweater\white-sweater\unisex-fleece-sweatshirt-white-front-6117dbba90fd9.png" />
+    <Content Include="images\product-img\sweater\white-sweater\unisex-fleece-sweatshirt-white-front-6117dbba91161.png" />
+    <Content Include="images\product-img\tee-size-guide.png" />
+    <Content Include="images\product-img\teeShirt\beige-Tee\adult-quality-tee-light-beige-front-2-60e814c22cf48.png" />
+    <Content Include="images\product-img\teeShirt\beige-Tee\adult-quality-tee-light-beige-front-60e814c22ce03.png" />
+    <Content Include="images\product-img\teeShirt\beige-Tee\adult-quality-tee-light-beige-front-60e814c22cfff.png" />
+    <Content Include="images\product-img\teeShirt\beige-Tee\adult-quality-tee-light-beige-front-60e814c22d0be.png" />
+    <Content Include="images\product-img\teeShirt\beige-Tee\adult-quality-tee-light-beige-front-60e814c22d169.png" />
+    <Content Include="images\product-img\teeShirt\beige-Tee\adult-quality-tee-light-beige-front-60e814c22d224.png" />
+    <Content Include="images\product-img\teeShirt\black-Tee\adult-quality-tee-black-front-2-60e8145b2fc6b.png" />
+    <Content Include="images\product-img\teeShirt\black-Tee\adult-quality-tee-black-front-60e8145b2fb7d.png" />
+    <Content Include="images\product-img\teeShirt\black-Tee\adult-quality-tee-black-front-60e8145b2fcdf.png" />
+    <Content Include="images\product-img\teeShirt\black-Tee\adult-quality-tee-black-front-60e8145b2fd51.png" />
+    <Content Include="images\product-img\teeShirt\black-Tee\adult-quality-tee-black-front-60e8145b2fdb6.png" />
+    <Content Include="images\product-img\teeShirt\black-Tee\adult-quality-tee-black-front-60e8145b2fe29.png" />
+    <Content Include="images\product-img\teeShirt\black-Tee\mens-classic-t-shirt-black-front-610d449edb4e8.png" />
+    <Content Include="images\product-img\teeShirt\black-Tee\mens-classic-t-shirt-black-front-610d449edb63d.png" />
+    <Content Include="images\product-img\teeShirt\black-Tee\unisex-basic-softstyle-t-shirt-black-front-6107e99e98a5d.png" />
+    <Content Include="images\product-img\teeShirt\black-Tee\unisex-basic-softstyle-t-shirt-black-front-6107e99e98c27.png" />
+    <Content Include="images\product-img\teeShirt\black-Tee\unisex-basic-softstyle-t-shirt-black-front-6107e99e99083.png" />
+    <Content Include="images\product-img\teeShirt\black-Tee\unisex-basic-softstyle-t-shirt-black-left-front-6107e99e98f17.png" />
+    <Content Include="images\product-img\teeShirt\black-Tee\unisex-basic-softstyle-t-shirt-black-right-front-6107e99e98dab.png" />
+    <Content Include="images\product-img\teeShirt\black-Tee\unisex-pocket-t-shirt-black-front-610d2fbde7983.png" />
+    <Content Include="images\product-img\teeShirt\black-Tee\unisex-pocket-t-shirt-black-front-610d2fbde7d1d.png" />
+    <Content Include="images\product-img\teeShirt\black-Tee\unisex-pocket-t-shirt-black-front-610d2fbde7d7b.png" />
+    <Content Include="images\product-img\teeShirt\black-Tee\unisex-pocket-t-shirt-black-zoomed-in-610d2fbde7c02.png" />
+    <Content Include="images\product-img\teeShirt\black-Tee\unisex-pocket-t-shirt-black-zoomed-in-610d2fbde7cbb.png" />
+    <Content Include="images\product-img\teeShirt\black-Tee\unisex-staple-t-shirt-black-heather-front-610c171abfbd4.png" />
+    <Content Include="images\product-img\teeShirt\black-Tee\unisex-staple-t-shirt-black-heather-front-610c171abfdfb.png" />
+    <Content Include="images\product-img\teeShirt\black-Tee\unisex-staple-t-shirt-black-heather-front-610c171abff28.png" />
+    <Content Include="images\product-img\teeShirt\black-Tee\unisex-staple-t-shirt-black-heather-front-610d46213a977.png" />
+    <Content Include="images\product-img\teeShirt\black-Tee\unisex-staple-t-shirt-black-heather-front-610d46213aade.png" />
+    <Content Include="images\product-img\teeShirt\black-Tee\unisex-staple-t-shirt-black-heather-left-front-610c171ac0027.png" />
+    <Content Include="images\product-img\teeShirt\black-Tee\unisex-staple-t-shirt-black-heather-right-front-610c171ac0257.png" />
+    <Content Include="images\product-img\teeShirt\black-Tee\unisex-staple-t-shirt-black-heather-right-front-610d46213abd8.png" />
+    <Content Include="images\product-img\teeShirt\lightGray-Tee\adult-quality-tee-light-grey-front-2-60e8145b312ed.png" />
+    <Content Include="images\product-img\teeShirt\lightGray-Tee\adult-quality-tee-light-grey-front-60e8145b31172.png" />
+    <Content Include="images\product-img\teeShirt\lightGray-Tee\adult-quality-tee-light-grey-front-60e8145b3146b.png" />
+    <Content Include="images\product-img\teeShirt\lightGray-Tee\adult-quality-tee-light-grey-front-60e8145b315df.png" />
+    <Content Include="images\product-img\teeShirt\lightGray-Tee\adult-quality-tee-light-grey-front-60e8145b31776.png" />
+    <Content Include="images\product-img\teeShirt\lightGray-Tee\adult-quality-tee-light-grey-front-60e8145b319fb.png" />
+    <Content Include="images\product-img\teeShirt\white-Tee\adult-quality-tee-white-front-2-60e814c22d433.png" />
+    <Content Include="images\product-img\teeShirt\white-Tee\adult-quality-tee-white-front-60e814c22d2f0.png" />
+    <Content Include="images\product-img\teeShirt\white-Tee\adult-quality-tee-white-front-60e814c22d568.png" />
+    <Content Include="images\product-img\teeShirt\white-Tee\adult-quality-tee-white-front-60e814c22d6a8.png" />
+    <Content Include="images\product-img\teeShirt\white-Tee\adult-quality-tee-white-front-60e814c22d7df.png" />
+    <Content Include="images\product-img\teeShirt\white-Tee\adult-quality-tee-white-front-60e814c22d924.png" />
+    <Content Include="images\product-img\teeShirt\white-Tee\all-over-print-mens-crew-neck-t-shirt-white-back-610d40e2a374e.png" />
+    <Content Include="images\product-img\teeShirt\white-Tee\all-over-print-mens-crew-neck-t-shirt-white-back-610d40e2a3b07.png" />
+    <Content Include="images\product-img\teeShirt\white-Tee\all-over-print-mens-crew-neck-t-shirt-white-front-610d40e2a3431.png" />
+    <Content Include="images\product-img\teeShirt\white-Tee\all-over-print-mens-crew-neck-t-shirt-white-front-610d40e2a3615.png" />
+    <Content Include="images\product-img\teeShirt\white-Tee\all-over-print-mens-crew-neck-t-shirt-white-left-610d40e2a39d7.png" />
+    <Content Include="images\product-img\teeShirt\white-Tee\all-over-print-mens-crew-neck-t-shirt-white-left-610d40e2a3c35.png" />
+    <Content Include="images\product-img\teeShirt\white-Tee\all-over-print-mens-crew-neck-t-shirt-white-right-610d40e2a38a2.png" />
+    <Content Include="images\product-img\teeShirt\white-Tee\all-over-print-mens-crew-neck-t-shirt-white-right-610d40e2a3d79.png" />
+    <Content Include="images\product-img\teeShirt\white-Tee\mens-classic-t-shirt-white-front-6107e5efd1661.png" />
+    <Content Include="images\product-img\teeShirt\white-Tee\mens-classic-t-shirt-white-front-6107e5efd17ce.png" />
+    <Content Include="images\product-img\teeShirt\white-Tee\mens-classic-t-shirt-white-front-6107e5efd18c9.png" />
+    <Content Include="images\product-img\teeShirt\white-Tee\mens-classic-t-shirt-white-front-610d449edb1ab.png" />
+    <Content Include="images\product-img\teeShirt\white-Tee\mens-classic-t-shirt-white-front-610d449edb74c.png" />
+    <Content Include="images\product-img\teeShirt\white-Tee\unisex-pocket-t-shirt-white-front-610c034560867.png" />
+    <Content Include="images\product-img\teeShirt\white-Tee\unisex-pocket-t-shirt-white-front-610c034560b3f.png" />
+    <Content Include="images\product-img\teeShirt\white-Tee\unisex-pocket-t-shirt-white-front-610c034560c0f.png" />
+    <Content Include="images\product-img\teeShirt\white-Tee\unisex-pocket-t-shirt-white-zoomed-in-610c034560993.png" />
+    <Content Include="images\product-img\teeShirt\white-Tee\unisex-pocket-t-shirt-white-zoomed-in-610c034560a74.png" />
+    <Content Include="images\product-img\teeShirt\white-Tee\unisex-staple-t-shirt-white-front-610d3a2c586a1.png" />
+    <Content Include="images\product-img\teeShirt\white-Tee\unisex-staple-t-shirt-white-front-610d3a2c58937.png" />
+    <Content Include="images\product-img\teeShirt\white-Tee\unisex-staple-t-shirt-white-front-610d46213a4bd.png" />
+    <Content Include="images\product-img\teeShirt\white-Tee\unisex-staple-t-shirt-white-front-610d46213ad3f.png" />
+    <Content Include="images\product-img\teeShirt\white-Tee\unisex-staple-t-shirt-white-right-front-610d46213b378.png" />
+    <Content Include="images\product-img\trouser-size-guide.png" />
+    <Content Include="images\product-img\trousers\black-Trousers\all-over-print-mens-joggers-white-front-611e7b4cb3af6.png" />
+    <Content Include="images\product-img\trousers\black-Trousers\all-over-print-mens-joggers-white-front-611e7b4cb3cd4.png" />
+    <Content Include="images\product-img\trousers\black-Trousers\all-over-print-mens-joggers-white-left-611e7b4cb3d8e.png" />
+    <Content Include="images\product-img\trousers\black-Trousers\all-over-print-mens-joggers-white-left-611e7b4cb3de3.png" />
+    <Content Include="images\product-img\trousers\black-Trousers\all-over-print-mens-joggers-white-right-611e7b4cb3c43.png" />
+    <Content Include="images\product-img\trousers\black-Trousers\all-over-print-mens-joggers-white-right-611e7b4cb3d35.png" />
+    <Content Include="images\product-img\trousers\black-Trousers\unisex-fleece-sweatpants-black-front-61192bc970724.png" />
+    <Content Include="images\product-img\trousers\black-Trousers\unisex-fleece-sweatpants-black-front-61192bc970963.png" />
+    <Content Include="images\product-img\trousers\black-Trousers\unisex-fleece-sweatpants-black-left-front-61192bc97088c.png" />
+    <Content Include="images\product-img\trousers\black-Trousers\unisex-fleece-sweatpants-black-left-front-61192bc970a2d.png" />
+    <Content Include="images\product-img\trousers\black-Trousers\unisex-slim-fit-joggers-black-front-61192ce66cf0f.png" />
+    <Content Include="images\product-img\trousers\black-Trousers\unisex-slim-fit-joggers-black-front-61192ce66d147.png" />
+    <Content Include="images\product-img\trousers\black-Trousers\unisex-slim-fit-joggers-black-left-front-61192ce66d07e.png" />
+    <Content Include="images\product-img\trousers\black-Trousers\unisex-slim-fit-joggers-black-left-front-61192ce66d1fc.png" />
+    <Content Include="images\product-img\trousers\lightGray-Trousers\unisex-fleece-sweatpants-carbon-grey-front-61192bd47fe37.png" />
+    <Content Include="images\product-img\trousers\lightGray-Trousers\unisex-fleece-sweatpants-carbon-grey-front-61192bd480050.png" />
+    <Content Include="images\product-img\trousers\lightGray-Trousers\unisex-fleece-sweatpants-carbon-grey-left-front-61192bd47ff99.png" />
+    <Content Include="images\product-img\trousers\lightGray-Trousers\unisex-fleece-sweatpants-carbon-grey-left-front-61192bd48010e.png" />
+    <Content Include="images\product-img\trousers\white-Trousers\all-over-print-mens-joggers-white-front-611e7a5e3a2ce.png" />
+    <Content Include="images\product-img\trousers\white-Trousers\all-over-print-mens-joggers-white-front-611e7a5e3a44a.png" />
+    <Content Include="images\product-img\trousers\white-Trousers\all-over-print-mens-joggers-white-front-611e7ab3dd373.png" />
+    <Content Include="images\product-img\trousers\white-Trousers\all-over-print-mens-joggers-white-left-611e7a5e3a502.png" />
+    <Content Include="images\product-img\trousers\white-Trousers\all-over-print-mens-joggers-white-left-611e7a5e3a58a.png" />
+    <Content Include="images\product-img\trousers\white-Trousers\all-over-print-mens-joggers-white-right-611e7ab3dd480.png" />
+    <Content Include="images\product-img\trousers\white-Trousers\all-over-print-mens-leggings-white-front-61192da649d19.png" />
+    <Content Include="images\product-img\trousers\white-Trousers\all-over-print-mens-leggings-white-right-61192da649e4e.png" />
+    <Content Include="images\product-img\trousers\white-Trousers\unisex-fleece-sweatpants-white-front-61192bd4801c8.png" />
+    <Content Include="images\product-img\trousers\white-Trousers\unisex-fleece-sweatpants-white-front-61192bd4804e9.png" />
+    <Content Include="images\product-img\trousers\white-Trousers\unisex-fleece-sweatpants-white-left-front-61192bd480361.png" />
+    <Content Include="images\product-img\trousers\white-Trousers\unisex-fleece-sweatpants-white-left-front-61192bd480654.png" />
+    <Content Include="images\product-img\zoom-in.png" />
+    <Content Include="images\ratepic1.jpg" />
+    <Content Include="images\shirt2After.png" />
+    <Content Include="images\signupMsg.jpg" />
+    <Content Include="images\star.svg" />
+    <Content Include="images\tick-mark.png" />
+    <Content Include="images\TnG_logo.png" />
+    <Content Include="images\vid-poster.png" />
+    <Content Include="images\visa_logo.png" />
+    <Content Include="lib\fontawesome\css\all.min.css" />
+    <Content Include="lib\fonts\ChakraPetch\ChakraPetch.css" />
+    <Content Include="lib\fonts\ChakraPetch\OFL.txt" />
+    <Content Include="lib\highcharts\highcharts.js" />
+    <Content Include="lib\tailwind\tailwind.js" />
+    <Content Include="src\Admin\AdminLogin\AdminForgetPassword.aspx" />
+    <Content Include="src\Admin\AdminLogin\AdminLogin.aspx" />
+    <Content Include="src\Admin\AdminLogin\AdminResetPassword.aspx" />
+    <Content Include="src\Admin\AdminLogin\css\AdminLogin.css" />
+    <Content Include="src\Admin\AdminLogin\css\ForgetPassword.css" />
+    <Content Include="src\Admin\AdminLogin\css\ResetPassword.css" />
+    <Content Include="src\Admin\AdminMaster\css\AdminMaster.css" />
+    <Content Include="src\Admin\AdminMaster\js\AdminMaster.js" />
+    <Content Include="src\Admin\CustomerDetails\CustomerDetails.aspx" />
+    <Content Include="src\Admin\CustomerEdit\CustomerEdit.aspx" />
+    <Content Include="src\Admin\Customers\Customers.aspx" />
+    <Content Include="src\Admin\Dashboard\Dashboard.aspx" />
+    <Content Include="src\Admin\OrderDetails\OrderDetails.aspx" />
+    <Content Include="src\Admin\Orders\Orders.aspx" />
+    <Content Include="src\Admin\ProductAdd\ProductAdd.aspx" />
+    <Content Include="src\Admin\ProductDetails\ProductDetails.aspx" />
+    <Content Include="src\Admin\ProductEdit\ProductEdit.aspx" />
+    <Content Include="src\Admin\ProductReviewReply\ProductReviewReply.aspx" />
+    <Content Include="src\Admin\Products\Products.aspx" />
+    <Content Include="src\Admin\PromoCode\PromoCode.aspx" />
+    <Content Include="src\Admin\Setting\Setting.aspx" />
+    <Content Include="src\Admin\Staffs\Staffs.aspx" />
+    <Content Include="src\Client\Cart\Cart.aspx" />
+    <Content Include="src\Client\ClientMaster\css\ClientMaster.css" />
+    <Content Include="src\Client\ClientMaster\js\ClientMaster.js" />
+    <Content Include="src\Client\Comment\Comment.aspx" />
+    <Content Include="src\Client\Home\css\Home.css" />
+    <Content Include="src\Client\Home\Home.aspx" />
+    <Compile Include="src\Admin\AdminMaster\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Admin\AdminMaster\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="src\Admin\Customers\Customers.aspx.cs">
+      <DependentUpon>Customers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Admin\Customers\Customers.aspx.designer.cs">
+      <DependentUpon>Customers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Admin\Dashboard\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Admin\Dashboard\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Admin\Orders\Orders.aspx.cs">
+      <DependentUpon>Orders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Admin\Orders\Orders.aspx.designer.cs">
+      <DependentUpon>Orders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Admin\Products\Products.aspx.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Admin\Products\Products.aspx.designer.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Admin\PromoCode\PromoCode.aspx.cs">
+      <DependentUpon>PromoCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Admin\PromoCode\PromoCode.aspx.designer.cs">
+      <DependentUpon>PromoCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Admin\Setting\Setting.aspx.cs">
+      <DependentUpon>Setting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Admin\Setting\Setting.aspx.designer.cs">
+      <DependentUpon>Setting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Admin\Staffs\Staffs.aspx.cs">
+      <DependentUpon>Staffs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Admin\Staffs\Staffs.aspx.designer.cs">
+      <DependentUpon>Staffs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Client\ClientMaster\Client.Master.cs">
+      <DependentUpon>Client.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Client\ClientMaster\Client.Master.designer.cs">
+      <DependentUpon>Client.Master</DependentUpon>
+    </Compile>
+    <Compile Include="src\Client\Home\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\Client\Home\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon\site.webmanifest" />
+    <Content Include="images\shirt.webp" />
+    <Content Include="images\shirt2.webp" />
+    <Content Include="images\shirt2After.webp" />
+    <Content Include="images\shirt3.webp" />
+    <Content Include="lib\fontawesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="lib\fontawesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="lib\fontawesome\webfonts\fa-duotone-900.ttf" />
+    <Content Include="lib\fontawesome\webfonts\fa-duotone-900.woff2" />
+    <Content Include="lib\fontawesome\webfonts\fa-light-300.ttf" />
+    <Content Include="lib\fontawesome\webfonts\fa-light-300.woff2" />
+    <Content Include="lib\fontawesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="lib\fontawesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="lib\fontawesome\webfonts\fa-sharp-light-300.ttf" />
+    <Content Include="lib\fontawesome\webfonts\fa-sharp-light-300.woff2" />
+    <Content Include="lib\fontawesome\webfonts\fa-sharp-regular-400.ttf" />
+    <Content Include="lib\fontawesome\webfonts\fa-sharp-regular-400.woff2" />
+    <Content Include="lib\fontawesome\webfonts\fa-sharp-solid-900.ttf" />
+    <Content Include="lib\fontawesome\webfonts\fa-sharp-solid-900.woff2" />
+    <Content Include="lib\fontawesome\webfonts\fa-sharp-thin-100.ttf" />
+    <Content Include="lib\fontawesome\webfonts\fa-sharp-thin-100.woff2" />
+    <Content Include="lib\fontawesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="lib\fontawesome\webfonts\fa-solid-900.woff2" />
+    <Content Include="lib\fontawesome\webfonts\fa-thin-100.ttf" />
+    <Content Include="lib\fontawesome\webfonts\fa-thin-100.woff2" />
+    <Content Include="lib\fontawesome\webfonts\fa-v4compatibility.ttf" />
+    <Content Include="lib\fontawesome\webfonts\fa-v4compatibility.woff2" />
+    <Content Include="lib\fonts\ChakraPetch\ChakraPetch-Bold.ttf" />
+    <Content Include="lib\fonts\ChakraPetch\ChakraPetch-BoldItalic.ttf" />
+    <Content Include="lib\fonts\ChakraPetch\ChakraPetch-Italic.ttf" />
+    <Content Include="lib\fonts\ChakraPetch\ChakraPetch-Light.ttf" />
+    <Content Include="lib\fonts\ChakraPetch\ChakraPetch-LightItalic.ttf" />
+    <Content Include="lib\fonts\ChakraPetch\ChakraPetch-Medium.ttf" />
+    <Content Include="lib\fonts\ChakraPetch\ChakraPetch-MediumItalic.ttf" />
+    <Content Include="lib\fonts\ChakraPetch\ChakraPetch-Regular.ttf" />
+    <Content Include="lib\fonts\ChakraPetch\ChakraPetch-SemiBold.ttf" />
+    <Content Include="lib\fonts\ChakraPetch\ChakraPetch-SemiBoldItalic.ttf" />
+    <Content Include="src\Client\Login\css\AdminLogin.css" />
+    <Content Include="src\Client\Login\css\FirstPage.css" />
+    <Content Include="src\Client\Login\css\ForgetPassword.css" />
+    <Content Include="src\Client\Login\css\Login.css" />
+    <Content Include="src\Client\Login\css\Policy.css" />
+    <Content Include="src\Client\Login\css\ResetPassword.css" />
+    <Content Include="src\Client\Login\css\SignUp.css" />
+    <Content Include="src\Client\Login\FirstPage.aspx" />
+    <Content Include="src\Client\Login\ForgetPassword.aspx" />
+    <Content Include="src\Client\Login\Login.aspx" />
+    <Content Include="src\Client\Login\Policy.aspx" />
+    <Content Include="src\Client\Login\ResetPassword.aspx" />
+    <Content Include="src\Client\Login\SignUp.aspx" />
+    <Content Include="src\Client\Payment\Payment.aspx" />
+    <Content Include="src\Client\Payment\Success.aspx" />
+    <Content Include="src\Client\ProductDetails\ProductDetails.aspx" />
+    <Content Include="src\Client\ProductDetails\productDetails.css" />
+    <Content Include="src\Client\ProductDetails\productDetails.js" />
+    <Content Include="src\Client\Products\Products.aspx" />
+    <Content Include="src\Client\Shipping\Shipping.aspx" />
+    <Content Include="src\Client\UserProfile\AddAddress.aspx" />
+    <Content Include="src\Client\UserProfile\Cancelled.aspx" />
+    <Content Include="src\Client\UserProfile\ChangePassword.aspx" />
+    <Content Include="src\Client\UserProfile\Completed.aspx" />
+    <Content Include="src\Client\UserProfile\CompletedDetails.aspx" />
+    <Content Include="src\Client\UserProfile\CompletedDetails2.aspx" />
+    <Content Include="src\Client\UserProfile\css\ChangePassword.css" />
+    <Content Include="src\Client\UserProfile\css\MyOrder.css" />
+    <Content Include="src\Client\UserProfile\css\UserProfile.css" />
+    <Content Include="src\Client\UserProfile\DeleteAddress.aspx" />
+    <Content Include="src\Client\UserProfile\EditUserProfile.aspx" />
+    <Content Include="src\Client\UserProfile\ToReceive.aspx" />
+    <Content Include="src\Client\UserProfile\ToShip.aspx" />
+    <Content Include="src\Client\UserProfile\UserProfile.aspx" />
+    <Content Include="src\Client\UserProfile\UserReivew.aspx" />
+    <Content Include="src\ErrorPages\403.aspx" />
+    <Content Include="src\ErrorPages\404.aspx" />
+    <Content Include="src\ErrorPages\500.aspx" />
+    <Content Include="src\ErrorPages\ErrorSQLInjection.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="src\Admin\AdminMaster\Admin.Master" />
+    <Content Include="src\Client\ClientMaster\Client.Master" />
+    <Content Include="src\Client\Client.sitemap" />
+    <Content Include="src\Admin\Admin.sitemap" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\product_img\1\" />
+    <Folder Include="images\product_img\2\" />
+    <Folder Include="images\product_img\3\" />
+    <Folder Include="src\Client\Home\js\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58776</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:44338/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

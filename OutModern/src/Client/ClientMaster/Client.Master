@@ -1,0 +1,373 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Client.master.cs" Inherits="OutModern.src.Client.ClientMaster.Client" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OutModern | Modernised Outfits Online</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="<%= Page.ResolveClientUrl("~/favicon/favicon-32x32.png") %>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<%= Page.ResolveClientUrl("~/favicon/favicon-16x16.png") %>">
+
+    <!-- import font type css-->
+    <link href="<%=Page.ResolveClientUrl("~/lib/fonts/ChakraPetch/ChakraPetch.css") %>" rel="stylesheet" />
+
+    <!-- import fontawesome css-->
+    <link href="<%= Page.ResolveClientUrl("~/lib/fontawesome/css/all.min.css") %>" rel="stylesheet" />
+
+    <!-- import tailwind js-->
+    <script src="<%= Page.ResolveClientUrl("~/lib/tailwind/tailwind.js") %>"></script>
+    <link href="css/ClientMaster.css" rel="stylesheet" />
+    <style type="text/tailwindcss">
+        @layer base {
+            h1 {
+                @apply text-3xl text-black font-bold;
+            }
+
+            h2 {
+                @apply text-2xl text-black font-bold;
+            }
+
+            h3 {
+                @apply text-xl text-black font-bold;
+            }
+        }
+
+        @layer components {
+            .header {
+                @apply bg-[#f5f5f5] h-[75px] text-center sticky top-0 shadow flex justify-between;
+            }
+
+            .header-scroll {
+                @apply h-[60px];
+            }
+
+            .top-nav-item {
+                @apply text-xl relative after:transition-all after:w-0 hover:after:w-[100%] hover:text-black after:absolute after:left-0 after:right-0 after:bottom-0 after:m-auto after:h-[1px] after:bg-black;
+            }
+
+            .top-nav-item-active {
+                @apply text-xl relative after:w-[100%] after:absolute after:left-0 text-black after:right-0 after:bottom-0 after:m-auto after:h-[1px] after:bg-black;
+            }
+
+            #top-nav .drop-down {
+                @apply h-0 overflow-hidden absolute right-0 top-[100%] mx-auto bg-[#ffffff] text-left drop-shadow-2xl rounded-2xl w-[150px] cursor-default;
+            }
+
+                #top-nav .drop-down ul {
+                    @apply p-3;
+                }
+
+                #top-nav .drop-down li {
+                    @apply overflow-hidden my-2;
+                }
+
+            #top-nav .nav-dropdown-list {
+                @apply block transition-all py-2 cursor-pointer box-border pl-2 rounded-3xl hover:bg-black hover:text-white;
+            }
+        }
+
+        /* Default width for the textbox */
+        .textbox-default-width {
+            width: 208px; /* Adjust as needed */
+        }
+
+        /* Media query for smaller screen sizes */
+        @media screen and (max-width: 1000px) {
+            .textbox-default-width {
+                width: 96px; /* Adjust as needed for smaller screens */
+            }
+        }
+
+        /* Media query for even smaller screen sizes */
+        @media screen and (max-width: 766px) {
+            .textbox-default-width {
+                width: 208px; /* Adjust as needed for even smaller screens */
+            }
+        }
+
+
+        /* Default width for the textbox */
+        .textbox-email-width {
+            width: 280px; /* Adjust as needed */
+        }
+
+        /* Media query for smaller screen sizes */
+        @media screen and (max-width: 1200px) {
+            .textbox-email-width {
+                width: 200px; /* Adjust as needed for smaller screens */
+            }
+        }
+
+        /* Media query for even smaller screen sizes */
+        @media screen and (max-width: 900px) {
+            .textbox-email-width {
+                width: 130px; /* Adjust as needed for even smaller screens */
+            }
+        }
+
+        /*Table style*/
+        #data-table {
+            @apply border-spacing-5 border-collapse text-center drop-shadow-md bg-white;
+        }
+
+            #data-table .button {
+                @apply px-2 cursor-pointer hover:opacity-50 text-white;
+            }
+
+            #data-table tr {
+                @apply border-b border-black;
+            }
+
+        .data-table-head th {
+            @apply text-white;
+        }
+
+        #data-table thead {
+            @apply z-50 sticky top-14 bg-gray-950 text-white;
+        }
+
+            #data-table thead th {
+                @apply p-1;
+            }
+
+                #data-table thead th > * {
+                    @apply text-opacity-50 cursor-pointer hover:bg-gray-100 hover:text-gray-950 p-1 rounded;
+                }
+
+                #data-table thead th.active {
+                    @apply text-opacity-100;
+                }
+
+                    #data-table thead th.active i {
+                        @apply visible;
+                    }
+
+                #data-table thead th a.sort-asc i {
+                    @apply rotate-0;
+                }
+
+                #data-table thead th a.sort-desc i {
+                    @apply rotate-180;
+                }
+
+
+                #data-table thead th i {
+                    @apply invisible;
+                }
+
+        #data-table tbody tr {
+            @apply hover:bg-[#DBF0ED] cursor-pointer;
+        }
+
+        #data-table tbody td {
+            @apply p-2;
+        }
+    </style>
+
+    <!-- your head -->
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!-- container -->
+        <div class="w-[100%] m-auto bg-gray-50">
+
+            <!-- Ads -->
+            <div class="nav-ads flex relative text-center bg-[#626262] h-10 text-white justify-center items-center">
+                <asp:Label ID="lblPromoCode" runat="server" CssClass="text-white" Text="No Promo Code Available...."></asp:Label>
+                <i class="fa-solid fa-xmark absolute top-[10px] right-[10px] cursor-pointer"
+                    style="color: #ffffff; font-size: 20px;"></i>
+            </div>
+
+            <!-- Header -->
+            <header class="header bg-white shadow-md ">
+                <nav id="top-nav" class="container mx-auto flex justify-between p-4">
+
+                    <!-- LEFT PART -->
+                    <div class="flex items-center">
+                        <asp:HyperLink ID="hyperlinkLogo" runat="server" NavigateUrl="~/src/Client/Home/Home.aspx">
+                            <h1 class="text-2xl font-bold text-gray-800">OUTMODERN</h1>
+                        </asp:HyperLink>
+                    </div>
+
+                    <!-- CENTER PART -->
+                    <div class="md:flex hidden absolute left-1/2 transform -translate-x-1/2 flex items-center space-x-10 p-3">
+                        <asp:HyperLink ID="hyperlinkHome" CssClass="text-black-600 hover:text-gray-800" runat="server" NavigateUrl="~/src/Client/Home/Home.aspx">Home</asp:HyperLink>
+                        <asp:HyperLink ID="hyperlinkProduct" CssClass="text-black-600 hover:text-gray-800" runat="server" NavigateUrl="~/src/Client/Products/Products.aspx">Products</asp:HyperLink>
+
+                    </div>
+
+                    <!-- RIGHT PART -->
+                    <div class="flex items-center space-x-6">
+
+                        <asp:Panel ID="panelSearch" runat="server"
+                            CssClass="relative flex" DefaultButton="lBtnSearch">
+                            <asp:TextBox CssClass="rounded-2xl border-black border-2 h-10 pl-4 pr-10 text-gray-600 textbox-default-width" ID="txtSearch" runat="server"></asp:TextBox>
+
+                            <asp:LinkButton CssClass="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-600" ID="lBtnSearch" runat="server" OnClick="lBtnSearch_Click">
+     <i class="fa-solid fa-magnifying-glass cursor pt-1.5"></i>
+                            </asp:LinkButton>
+                        </asp:Panel>
+
+                        <!--CART-->
+                        <asp:HyperLink ID="hyperlinkCart" runat="server" NavigateUrl="~/src/Client/Cart/Cart.aspx" class="text-gray-600 hover:text-gray-800">
+                            <i class="fa-duotone fa-cart-shopping text-xl align-middle"></i>
+                            <asp:Label ID="numberLabel" runat="server" CssClass="inline-block text-center pl-2 pr-2 bg-[#131118] rounded-xl text-white" Text="13"></asp:Label>
+                        </asp:HyperLink>
+
+                        <!--USER-->
+                        <div class="nav-dropdown w-10 text-xl relative group hover:text-black cursor-pointer">
+                            <div>
+                                <i class="fa-regular fa-user align-middle group-hover:text-black text-xl"></i>
+                                <i class="fa-solid fa-angle-down align-middle group-hover:text-black"></i>
+                            </div>
+
+                            <div class="drop-down max-w-xs">
+                                <ul>
+                                    <%if (Session["CUSTID"]?.ToString() == null)
+                                        {%>
+                                    <li>
+                                        <asp:HyperLink CssClass="nav-dropdown-list" ID="HyperLink7" NavigateUrl="~/src/Client/Login/Login.aspx" runat="server">Log In</asp:HyperLink>
+                                    </li>
+                                    <li>
+                                        <asp:HyperLink CssClass="nav-dropdown-list" ID="HyperLink8" NavigateUrl="~/src/Client/Login/SignUp.aspx" runat="server">Sign Up</asp:HyperLink>
+                                    </li>
+                                    <%}%>
+
+                                    <%if (Session["CUSTID"]?.ToString() != null)
+                                        {%>
+                                    <li>
+                                        <asp:HyperLink CssClass="nav-dropdown-list" ID="HyperLink5" NavigateUrl="~/src/Client/UserProfile/UserProfile.aspx" runat="server">My Profile</asp:HyperLink>
+                                    </li>
+                                    <li>
+                                        <asp:HyperLink CssClass="nav-dropdown-list" ID="HyperLink6" NavigateUrl="~/src/Client/UserProfile/ToShip.aspx" runat="server">My Order</asp:HyperLink>
+                                    </li>
+
+                                    <li>
+                                        <%--<asp:HyperLink CssClass="nav-dropdown-list" ID="HyperLink9" NavigateUrl="~/src/Client/Login/Login.aspx" runat="server">Log Out</asp:HyperLink>--%>
+                                        <asp:Button ID="btn_logout" runat="server" CssClass="nav-dropdown-list" Style="width: 100%; text-align: left;" Text="Log Out" OnClick="btn_logout_Click" />
+                                    </li>
+
+
+                                    <%}%>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </nav>
+            </header>
+
+
+            <!--  Your Content -->
+            <div class="container max-w-full">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+            <!-- Footer -->
+            <footer class="bg-[#131118] py-8">
+                <div class="container mx-auto px-4">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                        <div>
+                            <asp:HyperLink ID="outModern" runat="server" NavigateUrl="~/src/Client/Home/Home.aspx">
+                          <h1 class="text-3xl font-semibold mb-4 text-white">OutModern</h1>
+                            </asp:HyperLink>
+                            <p class="text-white pb-2">
+                                <i class="fa-solid fa-phone text-white pr-2"></i>
+                                <asp:HyperLink ID="phoneLink" runat="server" CssClass="text-white hover:underline" NavigateUrl="tel:+17045550127">(704) 555-0127</asp:HyperLink>
+                            </p>
+                            <p class="text-white pb-2">
+                                <i class="fa-regular fa-envelope text-white pr-2"></i>
+                                <asp:HyperLink ID="emailLink" runat="server" CssClass="text-white hover:underline" NavigateUrl="mailto:krist@example.com">krist@example.com</asp:HyperLink>
+                            </p>
+                            <p class="text-white pb-2"><i class="fa-solid fa-location-dot text-white pr-2"></i>Pavilion, Kuala Lumpur</p>
+
+                        </div>
+
+                        <!--2nd Column-->
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4 text-white">Information</h3>
+                            <ul>
+                                <li class="pb-2">
+                                    <asp:HyperLink ID="myAccountLink" runat="server" CssClass="text-white hover:underline" NavigateUrl="~/src/Client/UserProfile/UserProfile.aspx">My Account</asp:HyperLink>
+                                </li>
+                                <li class="pb-2">
+                                    <asp:HyperLink ID="myCartLink" runat="server" CssClass="text-white hover:underline" NavigateUrl="~/src/Client/Cart/Cart.aspx">My Cart</asp:HyperLink>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                        <!--3rd Column-->
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4 text-white">Service</h3>
+                            <ul>
+                                <li class="pb-2">
+                                    <asp:HyperLink ID="privacyPolicyLink" runat="server" CssClass="text-white hover:underline" NavigateUrl="~/src/Client/Home/Home.aspx">Privacy Policy</asp:HyperLink>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                        <!--Last Column-->
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4 text-white">Subscribe</h3>
+                            <p class="text-white">Enter your email below to be the first to know about new collections and product launches.</p>
+                            <div class="flex mt-4 relative textbox-email-width">
+                                <asp:TextBox ID="emailTextBox" runat="server" CssClass="w-full bg-gray-700 text-gray-300 pl-4 pr-16 py-2 rounded-l" placeholder="Your Email"></asp:TextBox>
+                                <asp:Button ID="subscribeButton" runat="server" CssClass="absolute cursor-pointer right-0 p-2 bg-gray-600 text-gray-300 px-4 py-2 rounded-r" Text="→" />
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <!--ICON FOOTER-->
+                    <div class="border-t border-gray-300 mt-5">
+                        <div class="mt-2 flex justify-between items-center">
+                            <div class="flex gap-4">
+                                <div id="visaLink" class="text-white text-2xl">
+                                    <i class="fa-brands fa-cc-visa text-white text-2xl"></i>
+                                </div>
+                                <div id="mastercardLink" class="text-white text-2xl">
+                                    <i class="fab fa-cc-mastercard text-white text-2xl"></i>
+                                </div>
+                                <div id="paypalLink" class="text-white text-2xl">
+                                    <i class="fa-brands fa-cc-paypal text-white text-2xl"></i>
+                                </div>
+                            </div>
+
+                            <p class="text-gray-400 text-sm">&copy;<%: DateTime.Now.Year %> OutModern All Rights are reserved</p>
+
+                            <div class="flex gap-4">
+                                <asp:HyperLink ID="facebookLink" runat="server" NavigateUrl="https://www.facebook.com/dexter.goh.1297" CssClass="text-white text-2xl">
+                <i class="fab fa-facebook text-2xl text-white"></i>
+                                </asp:HyperLink>
+                                <asp:HyperLink ID="instagramLink" runat="server" NavigateUrl="https://www.instagram.com/dexterg_h/" CssClass="text-white text-2xl">
+                <i class="fab fa-instagram text-2xl text-white"></i>
+                                </asp:HyperLink>
+                                <asp:HyperLink ID="twitterLink" runat="server" NavigateUrl="https://www.facebook.com/dexter.goh.1297" CssClass="text-white text-2xl">
+                <i class="fab fa-twitter text-2xl text-white"></i>
+                                </asp:HyperLink>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </footer>
+
+
+
+        </div>
+
+
+
+        <!-- Imports scripts-->
+        <script src="<%= Page.ResolveClientUrl("~/src/Client/ClientMaster/js/ClientMaster.js") %>"></script>
+    </form>
+</body>
+</html>

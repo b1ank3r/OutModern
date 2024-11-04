@@ -1,0 +1,69 @@
+﻿.back{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-left:35px;
+}
+
+.backText {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    &:hover
+
+{
+    color: #94d4ca;
+}
+}
+
+.policy-wrapper {
+    background-color: rgba(211, 211, 211, 0.5);
+    box-shadow: 0px 0px 5px 5px lightgrey, 0px 0px 5px 5px rgba(211, 211, 211, 0.75), 0px 0px 5px 5px rgba(211, 211, 211, 0.5);
+    width: 75%;
+    margin: 3em auto;
+    margin-top: 0px;
+    text-align: justify;
+    padding: 1em 3em;
+    border-radius: 1em;
+    overflow-x: auto;
+}
+
+    .policy-wrapper :is(a:visited, a:link) {
+        color: rgb(0, 102, 255);
+    }
+
+    .policy-wrapper :is(a:hover, a:active) {
+        color: rgb(0, 191, 255);
+        transition: all 100ms;
+    }
+
+    .policy-wrapper h1 {
+        font-size: 2.5em;
+    }
+
+    .policy-wrapper h3 {
+        margin-bottom: 2em;
+    }
+
+    .policy-wrapper p {
+        margin: 1em 0;
+    }
+
+    .policy-wrapper li {
+        list-style-position: inside;
+    }
+
+    .policy-wrapper ul > li {
+        list-style-type: disc;
+        margin-left: 4ch;
+    }
+
+    .policy-wrapper h2 {
+        margin-top: -1em;
+        margin-bottom: 1rem;
+        padding-top: 3em;
+    }
+
+.privacy-content-head ol li {
+    line-height: 150%;
+}

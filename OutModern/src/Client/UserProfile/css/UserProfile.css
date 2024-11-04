@@ -1,0 +1,239 @@
+﻿/* Clearfix for floated columns */
+.containColumn::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.columns-containColumn {
+    display: flex;
+}
+
+.column1 {
+    float: left;
+    width: 25%;
+    padding: 1.25rem;
+    background-color: #f5f5f5;
+}
+
+.column2 {
+    float: left;
+    width: 75%;
+    padding: 1.25rem;
+    background-color: white;
+    display: flex;
+}
+
+.site span {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: black;
+    float: left;
+}
+
+.c2 {
+    float: left;
+    width: 100%;
+    margin-left: 10rem;
+}
+
+.column2A {
+    float: left;
+    width: 70%;
+    margin: 1vh auto;
+}
+
+.sectionLeft {
+    float: left;
+    width: 90%;
+    margin: 5vh;
+    margin-left: 2vw;
+    padding: 1.25rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+}
+
+.leftBox{
+    float: left;
+}
+
+.leftBox1 {
+    float: left;
+    margin-left: 1vh;
+    margin-top: 1.67vh;
+}
+
+leftBox2 {
+    float: left;
+    margin-left: 3vh;
+    margin-top: 1.67vh;
+}
+
+.leftBox1 input {
+    font-family: sans-serif;
+}
+
+.imgProfile {
+    border-radius: 50%;
+    width: 8.5rem; /* 135px */
+    height: 8.5rem; /* 135px */
+}
+
+.rightBox {
+    float: left;
+    margin-top: 1.25rem;
+}
+
+.username {
+    color: black;
+    font-weight: bold;
+    font-size: 3rem; /* 30px */
+}
+
+.borderLine {
+    width: 100%;
+    border-top: 0.125rem solid black;
+    margin-top: 1.25rem;
+}
+
+.boxBottom {
+    margin-top: 2.5rem;
+}
+
+.button {
+    width: 100%;
+    padding: 0.625rem;
+    color: black;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    &:hover
+{
+    color: #94d4ca;
+}
+}
+
+/*user profile section*/
+.section1 {
+    background-color: #f5f5f5;
+    padding: 1.875rem;
+    border-radius: 1rem;
+}
+
+.section_edit {
+    background-color: #f5f5f5;
+    float: left;
+    width: 70%;
+    padding: 1.875rem; /* 30px */
+    border-radius: 10px;
+    margin: 1vh auto;
+}
+
+.topBox {
+    display: flex; /* Enable flexbox layout */
+    justify-content: space-between; /* Align items horizontally */
+    align-items: center; /* Align items vertically (optional) */
+    padding: 0.625rem;
+}
+
+.titleBox {
+    float: left;
+    width: 60%;
+}
+
+.titleBox2 {
+    float: left;
+    width: 40%;
+    text-align: right;
+    cursor: pointer;
+    color: #94d4ca;
+    margin-top: 1.67vh;
+    &:hover
+{
+    color: #6dc5b8;
+}
+}
+
+
+.title {
+    font-size: 1.6875rem; /* 27px */
+    color: black;
+    margin-bottom: 0.625rem;
+}
+
+.bigBox {
+    margin-top: 1.875rem;
+}
+
+.boxItem {
+    display: flex;
+    padding: 0.3125rem;
+}
+
+.boxItem1 {
+    display: flex;
+    padding: 0.3125rem;
+}
+
+
+.labelData {
+    flex: 0 0 5.925rem;
+    text-align: right;
+    font-size: 1.20rem;
+    color: black;
+    font-weight:bold;
+    margin-right: 1.25rem; /* Add margin-right for spacing */
+}
+
+.labelData1 {
+    flex: 0 0 5.925rem;
+    text-align: right;
+    font-size: 1.20rem;
+    color: black;
+    font-weight: bold;
+    margin-right: 1.25rem; /* Add margin-right for spacing */
+}
+
+
+.data {
+    float: left;
+    font-size: 1.25rem;
+    color: black;
+    padding-left: 1.25rem;
+    width: 37.5rem;
+}
+
+.ddl_address {
+    float: left;
+    font-size: 1.25rem;
+    color: black;
+    padding-left: 1.25rem;
+    width: auto;
+    background-color: whitesmoke;
+    border-color: #d9d9d9;
+}
+
+.edit_data {
+    float: right;
+    font-size: 1.25rem;
+    color: black;
+    padding-left: 1.25rem;
+    margin-left: 1.25rem; /* 20px */
+    width: 36rem; /* 600px */
+    border-radius: 10px;
+}
+
+.EPBoxButton {
+    padding-bottom: 0.125rem;
+    text-align: center;
+}
+
+.deleteAccount {
+    float: right;
+    width: 20%;
+    margin-top: 0.625rem;
+    margin-bottom: 2.5rem;
+}

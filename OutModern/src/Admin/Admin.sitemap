@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+	<siteMapNode url="" title=""  description="">
+		<siteMapNode url="~/src/Admin/Dashboard/Dashboard.aspx" title="Dashboard"  description="" />
+		<siteMapNode url="~/src/Admin/Staffs/Staffs.aspx" title="Staffs"  description="" />
+
+		<siteMapNode url="~/src/Admin/Products/Products.aspx" title="Products"  description="" >
+			<siteMapNode url="~/src/Admin/ProductDetails/ProductDetails.aspx" title="Product Details" >
+				<siteMapNode url="~/src/Admin/ProductEdit/ProductEdit.aspx" title="Edit Product"/>
+				<siteMapNode url="~/src/Admin/ProductReviewReply/ProductReviewReply.aspx" title="Review Reply"/>
+			</siteMapNode>
+			<siteMapNode url="~/src/Admin/ProductAdd/ProductAdd.aspx" title="Add New Product" />
+		</siteMapNode>
+
+		<siteMapNode url="~/src/Admin/Orders/Orders.aspx" title="Orders"  description="" >
+			<siteMapNode url="~/src/Admin/OrderDetails/OrderDetails.aspx" title="Order Details" >
+				<siteMapNode url="~/src/Admin/OrderEdit/OrderEdit.aspx" title="Edit Order"  description="" />
+			</siteMapNode>
+			<siteMapNode url="~/src/Admin/OrderAdd/OrderAdd.aspx" title="Add Order"  description="" />
+		</siteMapNode>
+
+		<siteMapNode url="~/src/Admin/Customers/Customers.aspx" title="Customers"  description="" >
+			<siteMapNode url="~/src/Admin/CustomerDetails/CustomerDetails.aspx" title="Customer Details"  description="" >
+				<siteMapNode url="~/src/Admin/CustomerEdit/CustomerEdit.aspx" title="Edit Customer"  description="" />
+			</siteMapNode>
+		</siteMapNode>
+
+		<siteMapNode url="~/src/Admin/PromoCode/PromoCode.aspx" title="PromoCode"  description="" />
+		<siteMapNode url="~/src/Admin/Feedback/Feedback.aspx" title="Feedback"  description="" />
+		<siteMapNode url="~/src/Admin/Setting/Setting.aspx" title="Setting"  description="" />
+	</siteMapNode>
+</siteMap>

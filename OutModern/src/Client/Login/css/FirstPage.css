@@ -1,0 +1,133 @@
+﻿body {
+    height: 100vh;
+}
+
+.FirstPageHeader {
+    background-color: #f5f5f5;
+    display: flex; /* Add display: flex to enable flexbox layout */
+    justify-content: space-between; /* Align items at the beginning and end */
+}
+
+.flex.items-center { /* Add this line back */
+    width: calc(100% - 200px); /* Adjust width as needed */
+    margin: 0 auto; /* Center the logo and buttons horizontally */
+}
+
+.signUpButton {
+    width: 10%;
+    height: 10%;
+    border-radius: 5px;
+    padding: 0.50rem 1rem;
+    font-family: sans-serif;
+    color: black;
+    font-weight: bold;
+    border: 2px solid black;
+    float: right;
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    /* Styles for hover state */
+    &:hover
+
+{
+    color: #bfbfbf;
+    border: 2px solid #bfbfbf;
+}
+
+}
+
+.loginButton {
+    width: 10%;
+    height: 10%;
+    border-radius: 5px;
+    padding: 0.50rem 1rem;
+    font-family: sans-serif;
+    color: black;
+    font-weight: bold;
+    border: 2px solid black;
+    float: right;
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    /* Styles for hover state */
+    &:hover
+
+{
+    color: #bfbfbf;
+    border: 2px solid #bfbfbf;
+}
+
+}
+
+.adminLoginButton {
+    width: 10%;
+    height: 10%;
+    border-radius: 5px;
+    padding: 0.50rem 1rem;
+    font-family: sans-serif;
+    color: whitesmoke;
+    font-weight: bold;
+    border: 2px solid black;
+    float: right;
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    /* Styles for hover state */
+    &:hover
+
+{
+    color: #bfbfbf;
+}
+}
+
+.FirstPageContent {
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url('../../../../images/login-img/login-background13.jpg');
+}
+
+.FirstPageWord{
+    float: left;
+    margin-top : 170px;
+    margin-left: 140px;
+    width: 700px;
+}
+
+.statement {
+    font-family: sans-serif;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.statement2 {
+    font-family: sans-serif;
+    color: whitesmoke;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.nextLine{
+    width:100%;
+}
+
+.signUpFFButton {
+    color: black; /* White text */
+    border: none; /* Remove default border */
+    border-radius: 40px; /* Rounded corners */
+    padding: 0.50rem 1rem; /* Padding for spacing */
+    font-family: sans-serif; /* Default font family */
+    font-weight: bold; /* Bold text */
+    margin-top: 20px;
+    cursor: pointer;
+    &:hover
+
+{
+    color: grey;
+}
+}

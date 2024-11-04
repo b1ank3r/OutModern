@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~/src/Client/Home/Home.aspx" title="Home"  description="Home">
+    	<!-- Cart page -->
+    <siteMapNode url="~/src/Client/Cart/Cart.aspx" title="Cart" description="View and manage items in your shopping cart">
+		<!-- Payment page -->
+		<siteMapNode url="~/src/Client/Shipping/Shipping.aspx" title="Shipping" description="Proceed to Shipping">
+			<siteMapNode url="~/src/Client/Payment/Payment.aspx" title="Payment" description="Proceed to payment" />
+		</siteMapNode>
+	</siteMapNode>
+    <siteMapNode url="" title=""  description="" />
+    <siteMapNode url="" title=""  description="" />
+	  <siteMapNode url="~/src/Client/Products/Products.aspx" title="Products"  description="" >
+		  <siteMapNode url="~/src/Client/ProductDetails/ProductDetails.aspx" title="Product Details" >			 
+		  </siteMapNode>
+	  </siteMapNode>
+
+	  <!-- User Profile page -->
+	  <siteMapNode url="~/src/Client/UserProfile/UserProfile.aspx" title="Profile" description="User Profile">
+		  <!-- Edit User Profile page -->
+		  <siteMapNode url="~/src/Client/UserProfile/EditUserProfile.aspx" title="Edit Profile" description="Edit User Profile"> </siteMapNode>
+	  </siteMapNode>
+	  
+	  
+	  
+  </siteMapNode>
+</siteMap>

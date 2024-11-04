@@ -1,0 +1,344 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.Master.cs" Inherits="OutModern.src.Admin.AdminMaster.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Outmodern</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="<%= Page.ResolveClientUrl("~/favicon/favicon-32x32.png") %>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<%= Page.ResolveClientUrl("~/favicon/favicon-16x16.png") %>">
+
+    <!-- import font type css-->
+    <link href="<%=Page.ResolveClientUrl("~/lib/fonts/ChakraPetch/ChakraPetch.css") %>" rel="stylesheet" />
+
+    <!-- import fontawesome css-->
+    <link href="<%= Page.ResolveClientUrl("~/lib/fontawesome/css/all.min.css") %>" rel="stylesheet" />
+
+    <!-- import tailwind js-->
+    <script src="<%= Page.ResolveClientUrl("~/lib/tailwind/tailwind.js") %>"></script>
+    <link href="css/AdminMaster.css" rel="stylesheet" />
+
+    <style type="text/tailwindcss">
+        @layer base {
+            h1 {
+                @apply text-3xl text-black font-bold;
+            }
+
+            h2 {
+                @apply text-2xl text-black font-bold;
+            }
+
+            h3 {
+                @apply text-xl text-black font-bold;
+            }
+
+            input {
+                @apply border border-black rounded pl-2;
+            }
+
+            select {
+                @apply border border-black rounded pl-2;
+            }
+        }
+
+        @layer components {
+
+            #side-menu {
+                @apply drop-shadow px-5 bg-[#F8F8FA] min-h-screen;
+            }
+
+                #side-menu .menu-title {
+                    @apply mb-2 text-xl mb-1 overflow-hidden text-nowrap;
+                }
+
+                #side-menu a {
+                    @apply block rounded-full py-2 pl-3 hover:bg-[#DBF0ED] relative;
+                }
+
+            a.active {
+                @apply bg-[#94D4CA];
+            }
+
+
+            #side-menu .menu-item .menu-item-text {
+                @apply inline-block align-middle overflow-hidden text-nowrap w-auto;
+            }
+
+            .icon-button-bg {
+                @apply p-2 rounded cursor-pointer hover:bg-[#DBF0ED];
+            }
+
+            .drop-down {
+                @apply relative cursor-default hover:bg-[#DBF0ED] rounded flex justify-center items-center ml-1 h-full px-1 box-border;
+            }
+
+            .drop-down-list {
+                @apply absolute top-full w-full text-right left-0 bg-[#F8F8FA] border box-border hidden group-hover:block;
+            }
+
+            .drop-down-item {
+                @apply block text-sm py-2 cursor-pointer m-1 hover:bg-[#DBF0ED] box-border;
+            }
+
+            /*Child page common style*/
+            .button {
+                @apply text-white px-2 py-1 cursor-pointer bg-amber-500 hover:opacity-50 rounded;
+            }
+
+            .filter-item .item {
+                @apply mr-2 border p-2 box-border;
+            }
+
+            /*Table style*/
+            #data-table {
+                @apply border-spacing-5 border-collapse text-center drop-shadow-md bg-white;
+            }
+
+                #data-table .button {
+                    @apply px-2 cursor-pointer hover:opacity-50 text-white;
+                }
+
+                #data-table tr {
+                    @apply border-b border-black;
+                }
+
+                #data-table thead {
+                    @apply z-50 sticky top-14 bg-gray-950 text-white;
+                }
+
+                    #data-table thead th {
+                        @apply p-1;
+                    }
+
+                        #data-table thead th > * {
+                            @apply text-opacity-50 cursor-pointer hover:bg-gray-100 hover:text-gray-950 p-1 rounded;
+                        }
+
+                        #data-table thead th.active {
+                            @apply text-opacity-100;
+                        }
+
+                            #data-table thead th.active i {
+                                @apply visible;
+                            }
+
+                        #data-table thead th a.sort-asc i {
+                            @apply rotate-0;
+                        }
+
+                        #data-table thead th a.sort-desc i {
+                            @apply rotate-180;
+                        }
+
+
+                        #data-table thead th i {
+                            @apply invisible;
+                        }
+
+                #data-table tbody tr {
+                    @apply hover:bg-[#DBF0ED] cursor-pointer;
+                }
+
+                #data-table tbody td {
+                    @apply p-2;
+                }
+
+            /*Pagination style in data pager for all tables*/
+            .pagination {
+                @apply flex justify-center my-2;
+            }
+
+                .pagination * {
+                    @apply p-0 border border-black cursor-pointer hover:bg-[#E6F5F2] size-8 text-center leading-8;
+                }
+
+                .pagination .active {
+                    @apply bg-[#94D4CA];
+                }
+
+                .pagination :first-child {
+                    @apply mr-2;
+                }
+
+                .pagination :last-child {
+                    @apply ml-2;
+                }
+        }
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <!-- Container -->
+        <div class="flex items-stretch">
+            <!-- Side menu -->
+            <div id="side-menu">
+                <div class="sticky top-0 pt-2">
+                    <!-- Company name / logo -->
+                    <div id="companyLogo" class="relative">
+                        <asp:Image ID="imgLogo" CssClass="transition-none absolute inset-0 m-auto w-0" runat="server" ImageUrl="~/images/logo-admin.png?a=1" />
+                        <h1 class="italic overflow-hidden ">OUTMODERN</h1>
+                    </div>
+
+                    <!-- main -->
+                    <%if (Session["AdminRole"].ToString() == "Manager")
+                        {  %>
+                    <div class="mt-5">
+                        <div class="menu-title">Main</div>
+
+                        <!--Dashboard-->
+                        <asp:HyperLink runat="server" ID="hyperlinkDashboard" NavigateUrl='<%# urls[Dashboard] %>' ToolTip="Overall performace, report">
+                       <div class="menu-item">
+                            <i class="fa-regular fa-house fa-lg mr-2"></i>
+                            <span class="menu-item-text">Dashboard</span>
+                        </div>
+                        </asp:HyperLink>
+                    </div>
+                    <%  } %>
+                    <!-- Management -->
+                    <div class="mt-5">
+                        <div class="menu-title">Management</div>
+
+                        <!--Staff-->
+                        <% if (Session["AdminRole"].ToString() == "Manager")
+                            { %>
+                        <asp:HyperLink runat="server" ID="hyperlinkStaffs" NavigateUrl='<%# urls[Staffs] %>' ToolTip="Manage staff, access level">
+                        <div class="menu-item">
+                            <i class="fa-regular fa-user-tie fa-lg fa-fw mr-2"></i>
+                            <span class="menu-item-text">Staffs</span>
+                        </div>
+                        </asp:HyperLink>
+                        <% } %>
+
+                        <!--Products-->
+                        <asp:HyperLink runat="server" ID="hyperlinkProducts" NavigateUrl='<%# urls[Products] %>' ToolTip="Manage product being sold">
+                    <div class="menu-item">
+                        <i class="fa-regular fa-store fa-lg fa-fw mr-2"></i>
+                        <span class="menu-item-text">Products</span>
+                    </div>
+                        </asp:HyperLink>
+                        <!--Orders-->
+                        <asp:HyperLink runat="server" ID="hyperlinkOrders" NavigateUrl='<%# urls[Orders]  %>' ToolTip="Manage current orders">
+                    <div class="menu-item">
+                        <i class="fa-regular fa-cart-circle-check fa-lg fa-fw mr-2"></i>
+                        <span class="menu-item-text">Orders</span>
+                    </div>
+                        </asp:HyperLink>
+                    </div>
+
+                    <!-- Customer Relation -->
+                    <div class="mt-5">
+                        <div class="menu-title">Customer Relation</div>
+                        <!--Customers-->
+                        <asp:HyperLink runat="server" ID="hyperlinkCustomers" NavigateUrl='<%# urls[Customers]  %>' ToolTip="Manage registered customer">
+                            <div class="menu-item">
+                                <i class="fa-duotone fa-users fa-lg fa-fw mr-2"></i>
+                                <span class="menu-item-text">Customers</span>
+                            </div>
+                        </asp:HyperLink>
+                        <!--Promo Code-->
+                        <asp:HyperLink runat="server" ID="hyperlinkPromoCode" NavigateUrl='<%# urls[PromoCode] %>' ToolTip="Set Promotion code for discount">
+                            <div class="menu-item">
+                                <i class="fa-regular fa-tags fa-lg fa-fw mr-2"></i>
+                                <span class="menu-item-text">Promo Code</span>
+                            </div>
+                        </asp:HyperLink>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main content -->
+            <div class="flex-1">
+                <!-- top nav-->
+                <div id="top" class="drop-shadow sticky z-10 top-0 h-14 box-border bg-[#f8f8fa] flex content-center items-center justify-between pr-5">
+                    <!-- Left -->
+                    <div class="flex items-center h-full">
+
+                        <!--Collapse / open side menu button-->
+                        <div id="menu-toggler" class="ml-1 icon-button-bg">
+                            <i class="fa-regular fa-bars fa-xl"></i>
+                        </div>
+
+                        <!-- Site Map -->
+                        <div class="ml-1">
+                            <asp:SiteMapPath OnItemDataBound="sitemapAdmin_ItemDataBound" ID="sitemapAdmin" runat="server" SiteMapProvider="adminSiteMap">
+                            </asp:SiteMapPath>
+                        </div>
+                    </div>
+
+                    <!-- Right -->
+                    <div class="flex flex-1 flex-row items-center h-full">
+
+                        <!-- Search Bar -->
+                        <asp:Panel ID="panelSearch" runat="server"
+                            CssClass="relative group ml-auto pl-5" DefaultButton="lBtnSearch">
+                            <asp:TextBox placeholder="Find in Table.."
+                                CssClass="rounded-2xl self-center w-56 pl-[10px] pr-[30px] border border-zinc-950 group-focus-within:w-96"
+                                ID="txtSearch" runat="server"></asp:TextBox>
+                            <asp:LinkButton OnClick="lBtnSearch_Click" CssClass="absolute right-[8px] top-[1px]"
+                                ID="lBtnSearch" runat="server">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </asp:LinkButton>
+                        </asp:Panel>
+
+                        <!-- Profile Setting -->
+                        <asp:HyperLink ID="hyperlinkSetting" runat="server" CssClass="icon-button-bg ml-1" NavigateUrl='<%# urls[Setting] %>'>
+                            <i class="fa-regular fa-gear fa-xl"></i>
+                        </asp:HyperLink>
+
+                        <!-- Profile -->
+                        <div id="nav-profile" class="drop-down group mr-2">
+                            <div id="current-username" class="mx-1 min-w-16">
+                                <asp:Label ID="lblUsername" runat="server"></asp:Label>
+                            </div>
+                            <i class="fa-solid fa-angle-down align-middle group-hover:text-black"></i>
+
+                            <!-- Profile drop down item -->
+                            <div class="drop-down-list">
+                                <asp:LinkButton CssClass="drop-down-item" ID="linkBtnLogout" OnClick="linkBtnLogout_Click" runat="server">
+                                    <span>Logout</span>
+                                    <i class="fa-regular fa-arrow-right-from-bracket"></i>     
+                                </asp:LinkButton>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Page Content -->
+                <div class="p-2 max-w-screen-2xl">
+
+                    <!-- Server Time-->
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+                        <ContentTemplate>
+                            <asp:Timer ID="Timer1" Interval="10000" OnTick="Timer1_Tick" runat="server"></asp:Timer>
+                            <div class="text-center">
+                                Server Time :
+                                <asp:Label ID="lblServerTime" runat="server" Text='<%# DateTime.Now %>'></asp:Label>
+                            </div>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+
+
+                    <!-- Main content -->
+                    <div class="p-12 pt-2">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Top -->
+        <div id="scrollTopBtn" class="hover:opacity-50 cursor-pointer fixed bottom-5 right-[-5rem] size-10 rounded-full border text-center leading-10 bg-black">
+            <i class="fa-regular fa-chevron-up text-white hover:text-white"></i>
+        </div>
+    </form>
+
+    <script src="<%= Page.ResolveClientUrl("~/src/Admin/AdminMaster/js/AdminMaster.js") %>"></script>
+
+</body>
+</html>

@@ -1,0 +1,222 @@
+﻿/* Clearfix for floated columns */
+.containColumn::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.columns-containColumn {
+    display: flex;
+}
+
+.column1 {
+    float: left;
+    width: 25%;
+    padding: 1.25rem;
+    background-color: #f5f5f5;
+}
+
+.column2 {
+    float: left;
+    width: 75%;
+    padding: 1.25rem;
+    background-color: white;
+}
+
+.sectionLeft {
+    float: left;
+    width: 90%;
+    margin: 5vh;
+    margin-left: 2vw;
+    padding: 1.25rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+}
+
+.leftBox {
+    float: left;
+}
+
+.imgProfile {
+    border-radius: 50%;
+    width: 8.4375rem; /* 135px */
+    height: 8.4375rem; /* 135px */
+}
+
+.rightBox {
+    float: left;
+    margin-top: 1.25rem;
+}
+
+.username {
+    color: black;
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.borderLine {
+    width: 100%;
+    border-top: 0.125rem solid black;
+    margin-top: 1.25rem;
+}
+
+.boxBottom {
+    margin-top: 2.5rem;
+}
+
+.button {
+    width: 100%;
+    padding: 0.625rem;
+    font-family: sans-serif;
+    color: black;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    &:hover
+
+{
+    color: #94d4ca;
+}
+
+}
+
+/*right top box*/
+.boxRightTop {
+    background-color: whitesmoke;
+    margin: 2.5rem; /* Converted from 5vh to rem */
+    margin-bottom: 2rem; /* Converted from 4vh to rem */
+    width: 55rem; /* Converted from 70.833vw to rem */
+}
+
+.btn_myOrder {
+    font-family: sans-serif;
+    color: black;
+    border: none;
+    font-size: 1.375rem; /* 22px */
+    border-radius: 0px;
+    width: 13.546rem; /* Converted from 26.458vw to rem */
+    height: 3.125rem; /* Converted from 5.208vh to rem */
+    background-color: whitesmoke;
+    cursor: pointer;
+    &:hover
+
+{
+    background-color: grey;
+    color: white;
+}
+
+}
+
+.btn_myOrder1 {
+    font-family: sans-serif;
+    color: white;
+    border: none;
+    font-size: 1.375rem; /* 22px */
+    border-radius: 0px;
+    width: 13.546rem; /* Converted from 26.458vw to rem */
+    height: 3.125rem; /* Converted from 5.208vh to rem */
+    cursor: pointer;
+}
+
+/*right bottom box*/
+.boxRightBottom {
+    margin: 2.5rem; /* Converted from 5vh to rem */
+    margin-top: 0px; /* No need for conversion */
+    width: 55rem; /* Converted from 70.833vw to rem */
+}
+
+.repeater_items {
+    background-color: whitesmoke;
+    margin-bottom: 0.625rem; /* Converted from 1.042vh to rem */
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line if necessary */
+    justify-content: space-between;
+}
+
+.box1 {
+    float: left;
+    width: 20%;
+    justify-content: flex-start; /* Align to the left */
+}
+
+.box2 {
+    float: left;
+    width: 60%;
+    justify-content: center; /* Align to the middle */
+}
+
+.box2small1 {
+    margin-top: 2.7rem; /* Converted from 4.861vh to rem */
+    width: 100%;
+}
+
+.box2small {
+    margin-top: 0.417rem; /* Converted from 0.694vh to rem */
+    width: 100%;
+}
+
+.box2_product_img {
+    padding: 1.041rem; /* Converted from 1.041vw to rem */
+}
+
+.box2_product_name {
+    font-family: sans-serif;
+    color: black;
+    font-weight: bold;
+    font-size: 2.5rem; /* Converted from 3.5vw to rem */
+}
+
+.box2_product_colour {
+    font-family: sans-serif;
+    color: black;
+    font-size: 0.9375rem; /* 15px */
+}
+
+.box2_product_size {
+    font-family: sans-serif;
+    color: black;
+    font-size: 0.9375rem; /* 15px */
+}
+
+.box2_product_quantity {
+    font-family: sans-serif;
+    color: black;
+    font-size: 0.9375rem; /* 15px */
+}
+
+.box2small2 {
+    margin-left: 3.75rem; /* Converted from 12.5vw to rem */
+    width: 100%;
+    margin-top: 3rem; /* Converted from 6.25vh to rem */
+}
+
+.box2_product_price {
+    font-family: sans-serif;
+    color: black;
+    font-weight: bold;
+    font-size: 2.25rem; /* Converted from 3vw to rem */
+}
+
+.box3 {
+    float: left;
+    width: 20%;
+    display: flex; /* Added this line */
+    align-items: center; /* Added this line */
+    justify-content: flex-end; /* Align to the right */
+}
+
+.box1, .box2, .box3, .box4 {
+    width: calc(33.33% - 0.625rem); /* Adjust width accordingly */
+    margin-bottom: 0.625rem; /* Converted from 1.042vh to rem */
+}
+
+.box4 {
+    margin-top: 0.625rem; /* Converted from 1.042vh to rem */
+    width: 100%; /* Ensure the button takes full width of the container */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: flex-end; /* Align content to the right */
+    padding-right: 3.125rem; /* Converted from 5.208vw to rem */
+    margin-bottom: 1.875rem; /* Converted from 3.125vh to rem */
+}

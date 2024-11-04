@@ -1,0 +1,106 @@
+﻿.login-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+.column1 {
+    float: left;
+    width: 40%;
+    padding: 2.5vw;
+    padding-bottom: 0px;
+    background-color: #f5f5f5;
+}
+
+.column2 {
+    float: left;
+    width: 60%;
+    padding: 1.042vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url('../../../../images/login-img/login-background6.jpg');
+    flex: 1;
+}
+
+.topRightBox {
+    float: left;
+}
+
+.hl_admin_login_text {
+    font-family: sans-serif;
+    font-size: 0.2605vw;
+    color: black;
+    cursor: pointer;
+    &:hover
+
+{
+    color: #94d4ca;
+}
+
+}
+
+.rightBox {
+    float: left;
+    margin-bottom: 1.563vw;
+    margin-top: 1.166vw; /* Changed to viewport width */
+    margin-bottom: 0;
+    margin-right: 1.042vw;
+    margin-left: 4.083vw;
+    padding: 3.125vw; /* Changed to viewport width */
+    padding-bottom: 1.563vw;
+}
+
+.title {
+    font-family: sans-serif;
+    color: black;
+    font-weight: bold;
+    font-size: 3.604rem;
+    width: 100%;
+}
+
+.title2 {
+    font-family: sans-serif;
+    color: grey;
+    font-weight: bold;
+    font-size: 1.875rem;
+    width: 100%;
+}
+
+.loginBoxItem {
+    margin-top: 1.042vw;
+    margin-bottom: 1.042vw;
+}
+
+.loginTextBox {
+    width: 21.875vw;
+    background-color: #f5f5f5;
+    border-radius: 0.625vw; /* Changed to viewport width */
+    box-shadow: 0 0.104vw 0.260vw rgba(0, 0, 0, 0.1); /* Changed to viewport width */
+    padding: 1.5vh 3vw; /* Changed to viewport width */
+    border: 1px solid black; /* Changed to viewport width */
+    font-family: sans-serif;
+    &:hover
+
+{
+    background-color: #e6e6e6;
+    border: 1px solid #b3b3b3;
+}
+
+}
+
+.loginBoxButton {
+    padding-bottom: 0.521vw;
+    margin-top: 2.083vw;
+}
+
+.loginBoxFP {
+    font-family: sans-serif; /* Default in Tailwind */
+    font-size: 0.5208vw;
+    color: blue;
+    cursor: pointer;
+}
+
+    .loginBoxFP:hover {
+        color: darkblue;
+    }
